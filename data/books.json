@@ -1,0 +1,1701 @@
+[
+  {
+    "id": "B001",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genre": "Science Fiction",
+    "price": 12.99,
+    "rating": 4.8,
+    "synopsis": "Set in the distant future amidst a sprawling feudal interstellar empire, Dune follows young Paul Atreides as his noble family assumes control of Arrakis, a desolate desert world and the universe's sole source of the priceless spice melange. When a deadly betrayal leaves Paul in the wilderness among the native Fremen, he embarks on an epic journey of survival, political intrigue, and mystical awakening that will alter galactic destiny.",
+    "tags": [
+      "sci-fi",
+      "space",
+      "epic",
+      "classic",
+      "adventure"
+    ],
+    "author_bio": "American science fiction author best known for the 1965 novel Dune and its five sequels. Herbert's work explored ecology, human evolution, geopolitics, and religion."
+  },
+  {
+    "id": "B002",
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "genre": "Fantasy",
+    "price": 10.99,
+    "rating": 4.7,
+    "synopsis": "Narrated by Kvothe from his quiet tavern inn, this high fantasy epic chronicles his transformation from a gifted child in a traveling troupe to the most notorious wizard, musician, and rogue his world has ever known. Seeking the mysterious beings called the Chandrian who slaughtered his family, Kvothe gains admission to the prestigious University to study arcane magic and the true names of the wind.",
+    "tags": [
+      "fantasy",
+      "magic",
+      "adventure",
+      "storytelling"
+    ],
+    "author_bio": "American fantasy writer and college lecturer, widely acclaimed for The Kingkiller Chronicle series known for lyrical prose and intricate world-building."
+  },
+  {
+    "id": "B003",
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genre": "Mystery Thriller",
+    "price": 9.99,
+    "rating": 4.4,
+    "synopsis": "On the morning of their fifth wedding anniversary in North Carthage, Missouri, Amy Elliott Dunne mysteriously vanishes from her home. As suspicious clues mount and media hysteria descends, her seemingly charming husband Nick becomes the prime suspect. Told through alternating perspectives and diary entries, this razor-sharp thriller unravels a toxic marriage built on lies, manipulation, and dark psychological games.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "psychological",
+      "crime",
+      "suspense"
+    ],
+    "author_bio": "American author and former television critic, renowned for dark, sharply plotted psychological thrillers featuring complex female antiheroes."
+  },
+  {
+    "id": "B004",
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-Help",
+    "price": 14.99,
+    "rating": 4.9,
+    "synopsis": "Drawing on biology, psychology, and neuroscience, James Clear presents an actionable blueprint for forming good habits and eliminating destructive ones. By focusing on the compounding power of tiny 1% daily adjustments, identity-based habits, and environment design, this guide reveals how micro-decisions lead to monumental personal and professional transformations.",
+    "tags": [
+      "self-help",
+      "productivity",
+      "habits",
+      "motivation",
+      "non-fiction"
+    ],
+    "author_bio": "American author, entrepreneur, and speaker focusing on habits, decision-making, and continuous self-improvement through small incremental changes."
+  },
+  {
+    "id": "B005",
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "genre": "Science Fiction",
+    "price": 8.99,
+    "rating": 4.7,
+    "synopsis": "Seconds before planet Earth is obliterated by a bureaucratic Vogon constructor fleet to make way for an interstellar expressway, quintessential Englishman Arthur Dent is whisked into space by his friend Ford Prefect, an undercover researcher for the galaxy's most indispensable travel guide. Together with an eccentric crew, they journey across the cosmos searching for the Ultimate Question of Life, the Universe, and Everything.",
+    "tags": [
+      "sci-fi",
+      "comedy",
+      "space",
+      "classic",
+      "humour"
+    ],
+    "author_bio": "English author, comic radio dramatist, and humorist best known for The Hitchhiker's Guide to the Galaxy, celebrated for witty satire on philosophy and technology."
+  },
+  {
+    "id": "B006",
+    "title": "The Girl with the Dragon Tattoo",
+    "author": "Stieg Larsson",
+    "genre": "Mystery Thriller",
+    "price": 11.49,
+    "rating": 4.5,
+    "synopsis": "Disgraced Swedish financial journalist Mikael Blomkvist is hired by an elderly industrialist to solve the forty-year-old cold case of his missing grandniece. Teaming up with the brilliant, tattooed hacker Lisbeth Salander, the unlikely duo uncovers a chilling trail of corporate corruption, familial violence, and gruesome serial murders buried beneath Sweden's serene facade.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "crime",
+      "investigation",
+      "hacker"
+    ],
+    "author_bio": "Swedish journalist and writer whose posthumously published Millennium trilogy became a global crime-fiction phenomenon addressing corporate and social corruption."
+  },
+  {
+    "id": "B007",
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "genre": "Non-Fiction",
+    "price": 13.99,
+    "rating": 4.6,
+    "synopsis": "Spanning 70,000 years of human history, Yuval Noah Harari examines how an unremarkable East African ape conquered the globe through three crucial revolutions: Cognitive, Agricultural, and Scientific. By analyzing humanity's unique ability to create and believe in shared fictions—like money, nations, and human rights—the book challenges fundamental assumptions about our species.",
+    "tags": [
+      "history",
+      "science",
+      "non-fiction",
+      "society",
+      "evolution"
+    ],
+    "author_bio": "Israeli public intellectual, historian, and professor of history at Hebrew University of Jerusalem, specializing in macro-historical processes and human evolution."
+  },
+  {
+    "id": "B008",
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "price": 13.49,
+    "rating": 4.9,
+    "synopsis": "Ryland Grace is the sole survivor on a desperate, last-chance space mission to save humanity from an extinction-level solar anomaly. Waking from a coma with amnesia and millions of miles from Earth, he must use scientific deduction, engineering ingenuity, and an unexpected alien friendship with an engineer named Rocky to solve an interstellar puzzle.",
+    "tags": [
+      "sci-fi",
+      "space",
+      "survival",
+      "adventure",
+      "science"
+    ],
+    "author_bio": "American novelist and former software engineer whose passion for space science and orbital mechanics led to meticulously researched hard science fiction."
+  },
+  {
+    "id": "B009",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Fiction",
+    "price": 9.49,
+    "rating": 4.5,
+    "synopsis": "Santiago, an Andalusian shepherd boy, embarks on a transformative pilgrimage across the Egyptian desert in search of a buried treasure near the Pyramids. Along his quest, he encounters gypsies, kings, and a desert alchemist who teach him to interpret omens, listen to the whisper of his heart, and fulfill his own Personal Legend.",
+    "tags": [
+      "inspirational",
+      "philosophy",
+      "journey",
+      "fiction",
+      "classic"
+    ],
+    "author_bio": "Brazilian lyricist and novelist whose allegorical fiction exploring destiny, spirituality, and personal legend has made him one of the most translated authors in history."
+  },
+  {
+    "id": "B010",
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genre": "Memoir",
+    "price": 11.99,
+    "rating": 4.7,
+    "synopsis": "Born in rural Idaho to survivalist parents who distrusted formal schooling, modern medicine, and the government, Tara Westover grew up isolated from mainstream society until age seventeen. Teaching herself enough mathematics and grammar to enter university, her pursuit of knowledge opened up an expansive world while forcing a heartbreaking reckoning with family ties.",
+    "tags": [
+      "memoir",
+      "education",
+      "family",
+      "non-fiction",
+      "inspiring"
+    ],
+    "author_bio": "American memoirist and historian whose bestselling memoir recounts her journey from an isolated survivalist upbringing to earning a PhD at Cambridge University."
+  },
+  {
+    "id": "B011",
+    "title": "Neuromancer",
+    "author": "William Gibson",
+    "genre": "Science Fiction",
+    "price": 9.99,
+    "rating": 4.3,
+    "synopsis": "Henry Dorsett Case is a washed-up console cowboy whose nervous system was sabotaged by vengeful employers, leaving him exiled from the virtual matrix. When a shadowy benefactor offers him a cure in exchange for pulling off the ultimate corporate cyberspace heist against an unfathomably powerful artificial intelligence, Case plunges into a high-tech underworld of hackers, cyborgs, and corporate power.",
+    "tags": [
+      "sci-fi",
+      "cyberpunk",
+      "hacker",
+      "dystopia",
+      "classic"
+    ],
+    "author_bio": "American-Canadian speculative fiction writer credited with pioneering the cyberpunk subgenre and coining the term 'cyberspace' in his groundbreaking debut."
+  },
+  {
+    "id": "B012",
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "genre": "Fiction",
+    "price": 10.49,
+    "rating": 4.4,
+    "synopsis": "Between life and death sits a magical library filled with infinite volumes, each offering Nora Seed the chance to live out alternate lives based on choices she regrets not making. As she travels through parallel existences where she became a rock star, glaciologist, or Olympic swimmer, Nora must uncover what truly makes a life fulfilling before time runs out.",
+    "tags": [
+      "fiction",
+      "philosophy",
+      "life",
+      "hope",
+      "contemporary"
+    ],
+    "author_bio": "English novelist and journalist whose poignant fiction and non-fiction candidly address mental health, hope, regret, and the human condition."
+  },
+  {
+    "id": "B013",
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Mystery Thriller",
+    "price": 8.99,
+    "rating": 4.2,
+    "synopsis": "When the elderly curator of the Louvre is murdered inside the museum, Harvard symbologist Robert Langdon and French cryptologist Sophie Neveu discover a trail of clues concealed within Leonardo da Vinci's greatest masterpieces. Racing across Paris and London, they unearth a historical conspiracy protected by the Priory of Sion that threatens to overturn traditional religious history.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "conspiracy",
+      "art",
+      "religion"
+    ],
+    "author_bio": "American thriller novelist celebrated for fast-paced, puzzle-driven conspiracies blending art history, cryptography, secret societies, and symbology."
+  },
+  {
+    "id": "B014",
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "genre": "Self-Help",
+    "price": 12.99,
+    "rating": 4.6,
+    "synopsis": "In an era of relentless digital distraction, multitasking, and shallow connectivity, Cal Newport argues that the ability to concentrate without distraction on cognitively demanding tasks is becoming both increasingly rare and extraordinarily valuable. This book provides actionable strategies and monastic discipline models to cultivate deep work habits and produce breakthrough creative output.",
+    "tags": [
+      "self-help",
+      "productivity",
+      "focus",
+      "work",
+      "non-fiction"
+    ],
+    "author_bio": "American computer science professor at Georgetown University and author researching the intersections of digital technology, focus, and productivity."
+  },
+  {
+    "id": "B015",
+    "title": "A Game of Thrones",
+    "author": "George R.R. Martin",
+    "genre": "Fantasy",
+    "price": 11.99,
+    "rating": 4.7,
+    "synopsis": "In a land where summers span decades and winters last a lifetime, King Robert Baratheon enlists his trusted friend Lord Eddard Stark as Hand of the King following the suspicious death of the previous officeholder. Across a richly textured feudal continent, ancient rivalries ignite, political betrayal festers, and an exile queen plots her return, while an ancient supernatural threat stirs beyond the Wall.",
+    "tags": [
+      "fantasy",
+      "epic",
+      "politics",
+      "war",
+      "dragons"
+    ],
+    "author_bio": "American novelist and screenwriter acclaimed as the 'American Tolkien', creator of the gritty, politically intricate epic fantasy series A Song of Ice and Fire."
+  },
+  {
+    "id": "B016",
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "genre": "Business",
+    "price": 13.49,
+    "rating": 4.4,
+    "synopsis": "Drawing from modern manufacturing principles and rapid experimentation, entrepreneur Eric Ries outlines a scientific approach to creating and managing successful startups. By prioritizing minimum viable products (MVPs), validated learning loops, and agile pivots over elaborate business plans, founders can build sustainable enterprises without wasting crucial capital.",
+    "tags": [
+      "business",
+      "startup",
+      "entrepreneurship",
+      "non-fiction",
+      "innovation"
+    ],
+    "author_bio": "American entrepreneur, blogger, and author who pioneered the Lean Startup movement, transforming how technology startups iterate and validate business models."
+  },
+  {
+    "id": "B017",
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "genre": "Science Fiction",
+    "price": 10.99,
+    "rating": 4.8,
+    "synopsis": "When a fierce dust storm forces his crew to evacuate Mars, astronaut Mark Watney is presumed dead and left behind on a desolate planet with damaged habitat gear and meager rations. Refusing to surrender to impossible odds, Watney uses botany, chemistry, and relentless problem-solving to grow food, signal NASA, and engineer his own miraculous survival.",
+    "tags": [
+      "sci-fi",
+      "space",
+      "survival",
+      "science",
+      "humour"
+    ],
+    "author_bio": "American novelist and former software engineer whose passion for space science and orbital mechanics led to meticulously researched hard science fiction."
+  },
+  {
+    "id": "B018",
+    "title": "In Cold Blood",
+    "author": "Truman Capote",
+    "genre": "True Crime",
+    "price": 9.49,
+    "rating": 4.5,
+    "synopsis": "On November 15, 1959, in the peaceful farming community of Holcomb, Kansas, four members of the respected Clutter family were brutally murdered in their home. Truman Capote reconstructs both the horrific crime and its aftermath with dazzling psychological insight, following the investigation, the psychological profiles of killers Perry Smith and Dick Hickock, and the eventual trial.",
+    "tags": [
+      "true crime",
+      "mystery",
+      "non-fiction",
+      "classic",
+      "investigation"
+    ],
+    "author_bio": "American novelist, screenwriter, and playwright whose pioneering true-crime masterpiece created the narrative non-fiction novel genre."
+  },
+  {
+    "id": "B019",
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "genre": "Psychology",
+    "price": 13.99,
+    "rating": 4.6,
+    "synopsis": "Nobel laureate Daniel Kahneman takes readers on a tour of the human mind, explaining the two systems that drive our thoughts: System 1 (fast, intuitive, and emotional) and System 2 (slower, deliberate, and logical). The book details cognitive biases, heuristics, prospect theory, and overconfidence, illuminating how we make financial, professional, and personal decisions.",
+    "tags": [
+      "psychology",
+      "science",
+      "behaviour",
+      "non-fiction",
+      "decision-making"
+    ],
+    "author_bio": "Israeli-American psychologist and Nobel Memorial Prize laureate in Economic Sciences, renowned for his foundational work on behavioral economics and cognitive biases."
+  },
+  {
+    "id": "B020",
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "price": 9.99,
+    "rating": 4.8,
+    "synopsis": "Bilbo Baggins is a comfortable, unadventurous hobbit whose quiet life in the Shire is upended when the wizard Gandalf and a company of thirteen dwarves arrive on his doorstep. Enlisted as their burglar, Bilbo journeys across perilous mountains and dark forests to reclaim the stolen dwarven treasure guarded by the formidable dragon Smaug.",
+    "tags": [
+      "fantasy",
+      "adventure",
+      "classic",
+      "magic",
+      "quest"
+    ],
+    "author_bio": "English philologist, Oxford scholar, and father of modern high fantasy literature, creator of the legendary mythopoeic legendarium of Middle-earth."
+  },
+  {
+    "id": "B021",
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian Fiction",
+    "price": 8.49,
+    "rating": 4.7,
+    "synopsis": "In the totalitarian superstate of Oceania, the Party and its omnipresent leader Big Brother exercise absolute surveillance and psychological control over citizens, rewriting history through the Ministry of Truth. Low-ranking party worker Winston Smith secretly rebels against the regime by keeping a diary and falling in forbidden love, risking horrific torture in Room 101.",
+    "tags": [
+      "dystopia",
+      "classic",
+      "politics",
+      "surveillance",
+      "fiction"
+    ],
+    "author_bio": "English novelist, essayist, and critic whose piercing dystopian and political satire provided enduring critiques of totalitarianism and surveillance states."
+  },
+  {
+    "id": "B022",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian Fiction",
+    "price": 8.49,
+    "rating": 4.5,
+    "synopsis": "Set in a hyper-technological futuristic World State where human beings are genetically engineered in hatcheries, conditioned into strict castes, and kept compliant through state-mandated hedonism and the bliss-inducing drug soma. When an unconditioned outsider from an isolated reserve is introduced to this utopian society, fundamental questions of freedom, pain, and humanity collide.",
+    "tags": [
+      "dystopia",
+      "classic",
+      "science",
+      "society",
+      "fiction"
+    ],
+    "author_bio": "English writer and philosopher who authored nearly fifty books, renowned for his dystopian visions warning of technological conditioning and hedonistic control."
+  },
+  {
+    "id": "B023",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic Fiction",
+    "price": 8.99,
+    "rating": 4.8,
+    "synopsis": "Set in the fictional town of Maycomb, Alabama, during the Great Depression, young Scout Finch observes her principled lawyer father, Atticus Finch, defend Tom Robinson, a Black man falsely accused of raping a white woman. As racial prejudice tears the community apart, Scout and her brother Jem learn profound lessons in empathy, courage, and moral integrity.",
+    "tags": [
+      "classic",
+      "justice",
+      "race",
+      "drama",
+      "southern"
+    ],
+    "author_bio": "American novelist whose Pulitzer Prize-winning masterpiece became a definitive classic of modern American literature exploring racial injustice and childhood morality."
+  },
+  {
+    "id": "B024",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Classic Romance",
+    "price": 7.99,
+    "rating": 4.7,
+    "synopsis": "Set in Regency-era England, the spirited and independent Elizabeth Bennet must navigate social expectations, familial pressures to marry well, and her own hasty judgments of the wealthy, aloof aristocrat Mr. Darcy. Through sparkling dialogue and sharp social satire, both must overcome their personal flaws to discover authentic mutual respect and love.",
+    "tags": [
+      "romance",
+      "classic",
+      "society",
+      "comedy",
+      "drama"
+    ],
+    "author_bio": "English novelist whose romantic fiction, sparkling irony, and sharp social commentary earned her a revered place in English literature across centuries."
+  },
+  {
+    "id": "B025",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Classic Fiction",
+    "price": 8.49,
+    "rating": 4.2,
+    "synopsis": "Following his expulsion from his elite prep school Pencey Prep, sixteen-year-old Holden Caulfield spends three lonely December days wandering the streets of New York City. Battling grief over the death of his brother and disillusioned by the 'phoniness' of the adult world, Holden yearns to preserve the innocence of children as a catcher in the rye.",
+    "tags": [
+      "classic",
+      "coming-of-age",
+      "rebellion",
+      "fiction",
+      "literary"
+    ],
+    "author_bio": "American author whose iconic coming-of-age novel captured adolescent alienation, grief, and identity with unprecedented cultural resonance."
+  },
+  {
+    "id": "B026",
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "price": 19.99,
+    "rating": 4.9,
+    "synopsis": "The complete epic journey across Middle-earth to destroy the One Ring of Power forged by the Dark Lord Sauron. From the peaceful Shire to the fiery chasm of Mount Doom, the modest hobbit Frodo Baggins and his steadfast companion Samwise lead an unforgettable fellowship of men, elves, dwarves, and wizards in an all-out battle for the fate of civilization.",
+    "tags": [
+      "fantasy",
+      "epic",
+      "classic",
+      "quest",
+      "adventure"
+    ],
+    "author_bio": "English philologist, Oxford scholar, and father of modern high fantasy literature, creator of the legendary mythopoeic legendarium of Middle-earth."
+  },
+  {
+    "id": "B027",
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "price": 9.99,
+    "rating": 4.9,
+    "synopsis": "On his eleventh birthday, neglected orphan Harry Potter discovers he is the son of two powerful wizards and has been accepted to Hogwarts School of Witchcraft and Wizardry. Entering a wondrous world of flying broomsticks, spells, and loyal friends, Harry uncovers the dark mystery surrounding the Sorcerer's Stone and the dark wizard who murdered his parents.",
+    "tags": [
+      "fantasy",
+      "magic",
+      "young adult",
+      "adventure",
+      "school"
+    ],
+    "author_bio": "British author and philanthropist whose beloved wizarding world saga became the best-selling book series in history, inspiring generations of readers."
+  },
+  {
+    "id": "B028",
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "genre": "Dystopian Fiction",
+    "price": 9.49,
+    "rating": 4.6,
+    "synopsis": "In the ruins of what was once North America, the totalitarian nation of Panem forces each of its twelve districts to send one boy and one girl to participate in the annual Hunger Games—a televised fight to the death in a perilous arena. When sixteen-year-old Katniss Everdeen volunteers to take her younger sister's place, she becomes the reluctant symbol of rebellion.",
+    "tags": [
+      "dystopia",
+      "young adult",
+      "survival",
+      "action",
+      "adventure"
+    ],
+    "author_bio": "American television writer and novelist best known for her thrilling dystopian trilogy analyzing warfare, media spectacle, and political authoritarianism."
+  },
+  {
+    "id": "B029",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic Fiction",
+    "price": 7.99,
+    "rating": 4.3,
+    "synopsis": "Set during the roaring twenties on Long Island's Gold Coast, narrator Nick Carraway becomes fascinated by his enigmatic, ultra-wealthy neighbor Jay Gatsby, who hosts lavish parties in hopes of rekindling a lost romance with Daisy Buchanan. The novel stands as an exquisite, tragic critique of wealth, obsession, and the elusive American Dream.",
+    "tags": [
+      "classic",
+      "american",
+      "romance",
+      "tragedy",
+      "literary"
+    ],
+    "author_bio": "American Jazz Age novelist whose lyrical prose captured the excess, romantic disillusionment, and tragic pursuit of the American Dream in the 1920s."
+  },
+  {
+    "id": "B030",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Classic Fiction",
+    "price": 9.99,
+    "rating": 4.6,
+    "synopsis": "In the impoverished quarters of Saint Petersburg, former student Rodion Raskolnikov rationalizes murdering a corrupt, elderly pawnbroker to prove he is an extraordinary individual above ordinary moral law. Following the crime, Raskolnikov is plunged into a feverish psychological nightmare of guilt, paranoia, and relentless pursuit by an astute detective.",
+    "tags": [
+      "classic",
+      "russian",
+      "psychology",
+      "crime",
+      "philosophy"
+    ],
+    "author_bio": "Russian novelist, philosopher, and essayist whose profound psychological depth explored guilt, free will, existentialism, and redemption in Imperial Russia."
+  },
+  {
+    "id": "B031",
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "genre": "Self-Help",
+    "price": 11.99,
+    "rating": 4.5,
+    "synopsis": "Spiritual teacher Eckhart Tolle guides readers toward discovering their true nature by detaching from the ceaseless chatter of the egoic mind. By embracing the present moment as the only reality and letting go of psychological baggage tied to past regrets and future anxieties, individuals can access profound inner peace and enlightenment.",
+    "tags": [
+      "self-help",
+      "spirituality",
+      "mindfulness",
+      "philosophy",
+      "wellness"
+    ],
+    "author_bio": "German-born spiritual teacher and author known worldwide for teaching mindfulness, ego-transcendence, and present-moment awareness."
+  },
+  {
+    "id": "B032",
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert T. Kiyosaki",
+    "genre": "Personal Finance",
+    "price": 12.49,
+    "rating": 4.5,
+    "synopsis": "Robert Kiyosaki contrasts the differing financial philosophies of his two fathers: his biological father (a highly educated school superintendent who struggled financially) and his best friend's father (an eighth-grade dropout who built an empire). The book demystifies assets, liabilities, and practical steps to achieve true financial independence.",
+    "tags": [
+      "finance",
+      "investing",
+      "self-help",
+      "money",
+      "non-fiction"
+    ],
+    "author_bio": "American businessman, investor, and financial educator who challenged traditional views on money, assets, and passive income creation."
+  },
+  {
+    "id": "B033",
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "genre": "Business",
+    "price": 12.99,
+    "rating": 4.4,
+    "synopsis": "Legendary investor Peter Thiel asserts that the future of progress depends on vertical innovation—going from '0 to 1' by creating entirely new technologies rather than copying existing ones ('1 to n'). Drawing on his experiences building PayPal and investing in Silicon Valley, Thiel presents provocative lessons on monopoly, company culture, and breakthrough value.",
+    "tags": [
+      "business",
+      "startup",
+      "innovation",
+      "technology",
+      "entrepreneurship"
+    ],
+    "author_bio": "German-American billionaire venture capitalist, entrepreneur, and co-founder of PayPal and Palantir, known for contrarian perspectives on technology and monopoly."
+  },
+  {
+    "id": "B034",
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "genre": "Self-Help",
+    "price": 13.49,
+    "rating": 4.6,
+    "synopsis": "Stephen Covey presents a holistic, principle-centered approach for solving personal and professional challenges. By aligning our habits with enduring universal principles—from proactive responsibility and clear vision to empathetic communication and continuous renewal—individuals achieve sustainable personal growth and collaborative success.",
+    "tags": [
+      "self-help",
+      "productivity",
+      "leadership",
+      "habits",
+      "non-fiction"
+    ],
+    "author_bio": "American educator, author, and keynote speaker whose principle-centered approach to personal and organizational leadership sold tens of millions of copies."
+  },
+  {
+    "id": "B035",
+    "title": "Becoming",
+    "author": "Michelle Obama",
+    "genre": "Memoir",
+    "price": 14.99,
+    "rating": 4.8,
+    "synopsis": "In this deeply personal and inspiring memoir, former First Lady Michelle Obama chronicles the experiences that shaped her: from her childhood on the South Side of Chicago to her executive career balancing motherhood, and her historic years in the White House championing health, education, and equality.",
+    "tags": [
+      "memoir",
+      "biography",
+      "politics",
+      "inspiring",
+      "non-fiction"
+    ],
+    "author_bio": "American attorney, author, and the first African American First Lady of the United States, celebrated for advocacy in education, health, and leadership."
+  },
+  {
+    "id": "B036",
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "genre": "Self-Help",
+    "price": 11.99,
+    "rating": 4.5,
+    "synopsis": "Mark Manson cuts through traditional self-help platitudes to argue that improving our lives is not about relentless positivity, but about choosing our struggles wisely. By accepting our limitations, embracing discomfort, and prioritizing meaningful values, we develop genuine resilience and grounded contentment.",
+    "tags": [
+      "self-help",
+      "philosophy",
+      "motivation",
+      "life",
+      "humour"
+    ],
+    "author_bio": "American self-help author, blogger, and entrepreneur known for his no-nonsense, counter-intuitive philosophy on resilience, values, and realistic living."
+  },
+  {
+    "id": "B037",
+    "title": "Shoe Dog",
+    "author": "Phil Knight",
+    "genre": "Business Memoir",
+    "price": 13.99,
+    "rating": 4.8,
+    "synopsis": "Nike founder Phil Knight shares the candid, inside story of the company's chaotic early days when he began selling imported Japanese running shoes out of the trunk of his Plymouth. Overcoming near-bankruptcy, cutthroat competitors, and intense financial hurdles, Knight built an iconic brand and global cultural phenomenon.",
+    "tags": [
+      "memoir",
+      "business",
+      "entrepreneurship",
+      "inspiring",
+      "sports"
+    ],
+    "author_bio": "American billionaire business magnate and philanthropist who co-founded Nike, transforming a fifty-dollar startup into an iconic global sports powerhouse."
+  },
+  {
+    "id": "B038",
+    "title": "The Innovators",
+    "author": "Walter Isaacson",
+    "genre": "Non-Fiction",
+    "price": 14.49,
+    "rating": 4.5,
+    "synopsis": "Walter Isaacson chronicles the collaborative history of the digital revolution, profiling the brilliant mathematicians, engineers, and visionaries—from Ada Lovelace and Alan Turing to Steve Jobs and Tim Berners-Lee—whose collective creativity and teamwork birthed the computer, the microchip, and the internet.",
+    "tags": [
+      "technology",
+      "history",
+      "innovation",
+      "non-fiction",
+      "science"
+    ],
+    "author_bio": "American biographer, journalist, and former CEO of the Aspen Institute and CNN chairman, celebrated for definitive biographies of history's visionary minds."
+  },
+  {
+    "id": "B039",
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "genre": "Biography",
+    "price": 15.99,
+    "rating": 4.6,
+    "synopsis": "Based on more than forty interviews with Steve Jobs conducted over two years, this definitive biography portrays the brilliant, temperamental Apple co-founder whose passion for perfection, design simplicity, and ferociously driven leadership revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing.",
+    "tags": [
+      "biography",
+      "technology",
+      "business",
+      "inspiring",
+      "leadership"
+    ],
+    "author_bio": "American biographer, journalist, and former CEO of the Aspen Institute and CNN chairman, celebrated for definitive biographies of history's visionary minds."
+  },
+  {
+    "id": "B040",
+    "title": "Elon Musk",
+    "author": "Walter Isaacson",
+    "genre": "Biography",
+    "price": 16.99,
+    "rating": 4.4,
+    "synopsis": "Walter Isaacson delivers an intimate, unvarnished biography of Elon Musk, the mercurial innovator behind Tesla, SpaceX, Neuralink, and xAI. Exploring Musk's childhood in South Africa, extreme risk tolerance, and maniacal sense of mission, the book investigates what fuels his drive to colonize Mars and accelerate sustainable energy.",
+    "tags": [
+      "biography",
+      "technology",
+      "business",
+      "space",
+      "electric vehicles"
+    ],
+    "author_bio": "American biographer, journalist, and former CEO of the Aspen Institute and CNN chairman, celebrated for definitive biographies of history's visionary minds."
+  },
+  {
+    "id": "B041",
+    "title": "Ender's Game",
+    "author": "Orson Scott Card",
+    "genre": "Science Fiction",
+    "price": 10.49,
+    "rating": 4.7,
+    "synopsis": "To prepare for an impending invasion by an alien insectoid species known as the Buggers, Earth's military recruits exceptionally gifted children for rigorous strategic training. Young Ender Wiggin excels in the brutal zero-gravity Battle Room simulations, navigating tactical genius, loneliness, and the heavy moral burdens of war.",
+    "tags": [
+      "sci-fi",
+      "space",
+      "military",
+      "young adult",
+      "strategy"
+    ],
+    "author_bio": "American science fiction writer and critic, best known for military sci-fi classics exploring empathy, child prodigies, and interspecies communication."
+  },
+  {
+    "id": "B042",
+    "title": "Foundation",
+    "author": "Isaac Asimov",
+    "genre": "Science Fiction",
+    "price": 10.99,
+    "rating": 4.7,
+    "synopsis": "Psychohistorian Hari Seldon mathematically foresees the catastrophic collapse of the Galactic Empire, which will plunge the galaxy into thirty thousand years of barbarism. To preserve civilization's collective knowledge and shorten the dark age to a single millennium, Seldon establishes the Foundation on a remote world at the galaxy's edge.",
+    "tags": [
+      "sci-fi",
+      "classic",
+      "space",
+      "society",
+      "epic"
+    ],
+    "author_bio": "Russian-born American biochemist and prolific sci-fi grandmaster, creator of the Foundation series and the Three Laws of Robotics."
+  },
+  {
+    "id": "B043",
+    "title": "Solaris",
+    "author": "Stanislaw Lem",
+    "genre": "Science Fiction",
+    "price": 9.99,
+    "rating": 4.4,
+    "synopsis": "Psychologist Kris Kelvin arrives at the scientific research station orbiting the oceanic planet Solaris, only to find the small crew driven to madness by physical apparitions materialized from their deepest repressed memories. The sentient plasma ocean challenges human scientific hubris and the limits of understanding truly alien intelligence.",
+    "tags": [
+      "sci-fi",
+      "philosophy",
+      "alien",
+      "literary",
+      "classic"
+    ],
+    "author_bio": "Polish philosopher, satirist, and visionary science fiction author noted for deep philosophical inquiries into artificial intelligence and communication with the truly alien."
+  },
+  {
+    "id": "B044",
+    "title": "The Left Hand of Darkness",
+    "author": "Ursula K. Le Guin",
+    "genre": "Science Fiction",
+    "price": 9.49,
+    "rating": 4.5,
+    "synopsis": "Genly Ai is a human envoy dispatched to the frozen world of Gethen to persuade its nations to join an interstellar planetary league. To bridge the diplomatic divide, he must understand a society where inhabitants have no fixed gender, challenging human assumptions about war, politics, love, and identity.",
+    "tags": [
+      "sci-fi",
+      "gender",
+      "politics",
+      "classic",
+      "literary"
+    ],
+    "author_bio": "American author whose pioneering speculative fiction explored gender, anarchism, Taoist philosophy, and anthropology with poetic brilliance."
+  },
+  {
+    "id": "B045",
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "genre": "Fantasy",
+    "price": 14.99,
+    "rating": 4.8,
+    "synopsis": "On the storm-wracked world of Roshar, centuries after the legendary Knights Radiant abandoned humanity, high-stakes war rages on the Shattered Plains. Highprince Dalinar Kholin struggles with visions of ancient doom, while Kaladin, a disgraced soldier turned bridge-slave, discovers hidden powers that could rekindle the Radiants.",
+    "tags": [
+      "fantasy",
+      "epic",
+      "magic",
+      "war",
+      "adventure"
+    ],
+    "author_bio": "American epic fantasy author renowned for intricate, rule-based magic systems, expansive Cosmere universe, and prodigious storytelling output."
+  },
+  {
+    "id": "B046",
+    "title": "Mistborn: The Final Empire",
+    "author": "Brandon Sanderson",
+    "genre": "Fantasy",
+    "price": 12.49,
+    "rating": 4.7,
+    "synopsis": "In a world where ash falls from the sky and mist dominates the night, the immortal Lord Ruler has maintained absolute totalitarian dominance for a millennium over the oppressed Skaa underclass. When a charismatic thief named Kelsier discovers a young street urchin named Vin who possesses rare Allomantic magic, they plot an impossible rebellion.",
+    "tags": [
+      "fantasy",
+      "magic",
+      "heist",
+      "adventure",
+      "rebellion"
+    ],
+    "author_bio": "American epic fantasy author renowned for intricate, rule-based magic systems, expansive Cosmere universe, and prodigious storytelling output."
+  },
+  {
+    "id": "B047",
+    "title": "Good Omens",
+    "author": "Terry Pratchett & Neil Gaiman",
+    "genre": "Fantasy Comedy",
+    "price": 10.99,
+    "rating": 4.7,
+    "synopsis": "According to the Divine Plan, the Apocalypse is scheduled for next Saturday. However, an easygoing angel named Aziraphale and a fast-living demon named Crowley, who have both grown quite fond of mortal life on Earth, team up to misplace the eleven-year-old Antichrist and prevent Armageddon in this hilarious comic masterpiece.",
+    "tags": [
+      "fantasy",
+      "comedy",
+      "satire",
+      "classic",
+      "british"
+    ],
+    "author_bio": "Legendary British fantasy duo: Pratchett, master of comic satire and Discworld, partnered with Gaiman, dark mythmaker and graphic novelist, to write the apocalypse comedy classic."
+  },
+  {
+    "id": "B048",
+    "title": "American Gods",
+    "author": "Neil Gaiman",
+    "genre": "Fantasy",
+    "price": 11.49,
+    "rating": 4.5,
+    "synopsis": "Released from prison following his wife's tragic death, Shadow Moon takes a bodyguard job for a charismatic con man named Mr. Wednesday. Traveling across rural America, Shadow discovers that the ancient gods brought over by immigrants are preparing for a cataclysmic war against the modern deities of technology, media, and wealth.",
+    "tags": [
+      "fantasy",
+      "mythology",
+      "americana",
+      "road trip",
+      "literary"
+    ],
+    "author_bio": "English author of short fiction, novels, comic books, and films, acclaimed for weaving ancient mythologies, dark folklore, and modern reality into urban fantasy."
+  },
+  {
+    "id": "B049",
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "genre": "Dystopian Fiction",
+    "price": 10.49,
+    "rating": 4.6,
+    "synopsis": "In the Republic of Gilead, a totalitarian Christian theocracy that has overthrown the United States government following an environmental fertility crisis, women are stripped of all autonomy. Offred is a Handmaid assigned to bear children for elite commanders, fighting to maintain her identity and memories of freedom.",
+    "tags": [
+      "dystopia",
+      "feminist",
+      "politics",
+      "classic",
+      "thriller"
+    ],
+    "author_bio": "Canadian poet, novelist, and environmental activist whose speculative fiction masterfully interrogates patriarchal oppression, totalitarianism, and ecological disaster."
+  },
+  {
+    "id": "B050",
+    "title": "Klara and the Sun",
+    "author": "Kazuo Ishiguro",
+    "genre": "Science Fiction",
+    "price": 13.49,
+    "rating": 4.4,
+    "synopsis": "Klara is an Artificial Friend with extraordinary observational abilities, designed to provide companionship to teenagers in a near-future society. From her vantage point in a store window and later inside a family home, Klara observes human affection, frailty, and the enduring nature of love with tender innocence.",
+    "tags": [
+      "sci-fi",
+      "ai",
+      "literary",
+      "emotion",
+      "future"
+    ],
+    "author_bio": "British novelist and Nobel laureate in Literature praised for delicately restrained, emotionally devastating explorations of memory, self-deception, and human mortality."
+  },
+  {
+    "id": "B051",
+    "title": "Never Let Me Go",
+    "author": "Kazuo Ishiguro",
+    "genre": "Literary Fiction",
+    "price": 10.99,
+    "rating": 4.4,
+    "synopsis": "Kathy, Tommy, and Ruth grow up at Hailsham, a seemingly idyllic and sheltered boarding school in the English countryside. As they mature into adulthood, they gradually discover the dark, unsettling truth about their true purpose in society and the bittersweet brevity of their shared lives.",
+    "tags": [
+      "literary",
+      "dystopia",
+      "emotional",
+      "sci-fi",
+      "classic"
+    ],
+    "author_bio": "British novelist and Nobel laureate in Literature praised for delicately restrained, emotionally devastating explorations of memory, self-deception, and human mortality."
+  },
+  {
+    "id": "B052",
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "genre": "Literary Fiction",
+    "price": 10.49,
+    "rating": 4.7,
+    "synopsis": "In 1970s Kabul, wealthy boy Amir and the son of his father's servant, Hassan, are inseparable friends bound by kite-flying tournaments. When Amir commits a devastating act of cowardice during a moment of crisis, the betrayal haunts him for decades through war and exile until he receives a chance for redemption.",
+    "tags": [
+      "literary",
+      "friendship",
+      "redemption",
+      "culture",
+      "drama"
+    ],
+    "author_bio": "Afghan-American novelist and physician whose poignant historical dramas illuminated the human stories, family bonds, and cultural heritage of war-torn Afghanistan."
+  },
+  {
+    "id": "B053",
+    "title": "A Thousand Splendid Suns",
+    "author": "Khaled Hosseini",
+    "genre": "Literary Fiction",
+    "price": 10.99,
+    "rating": 4.8,
+    "synopsis": "Spanning three tumultuous decades of Afghan history through Soviet occupation, civil war, and Taliban rule, this heartbreaking novel follows two women from very different backgrounds—Mariam and Laila—whose lives become intertwined within an abusive marriage, forging an unbreakable bond of maternal sacrifice and sisterhood.",
+    "tags": [
+      "literary",
+      "women",
+      "war",
+      "culture",
+      "emotional"
+    ],
+    "author_bio": "Afghan-American novelist and physician whose poignant historical dramas illuminated the human stories, family bonds, and cultural heritage of war-torn Afghanistan."
+  },
+  {
+    "id": "B054",
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "genre": "Post-Apocalyptic",
+    "price": 9.99,
+    "rating": 4.5,
+    "synopsis": "A father and his young son walk alone across a burned, post-apocalyptic America toward the coast. With nothing but a pistol to defend against roving marauders and the clothes on their backs, the pair sustain each other through freezing ash, starvation, and despair by 'carrying the fire' of human love and decency.",
+    "tags": [
+      "post-apocalyptic",
+      "survival",
+      "literary",
+      "drama",
+      "father-son"
+    ],
+    "author_bio": "American novelist and playwright celebrated for spare, biblical prose depicting visceral violence, morality, and desolate American landscapes."
+  },
+  {
+    "id": "B055",
+    "title": "Blood Meridian",
+    "author": "Cormac McCarthy",
+    "genre": "Literary Fiction",
+    "price": 10.49,
+    "rating": 4.4,
+    "synopsis": "Based on historical events along the Texas-Mexico border in the 1850s, this visceral epic follows a teenage runaway known as the Kid who falls in with the Glanton gang—a ruthless band of scalphunters led by the terrifying, erudite Judge Holden, depicting an uncompromising vision of human savagery.",
+    "tags": [
+      "literary",
+      "western",
+      "violence",
+      "classic",
+      "historical"
+    ],
+    "author_bio": "American novelist and playwright celebrated for spare, biblical prose depicting visceral violence, morality, and desolate American landscapes."
+  },
+  {
+    "id": "B056",
+    "title": "The Secret History",
+    "author": "Donna Tartt",
+    "genre": "Mystery Thriller",
+    "price": 11.99,
+    "rating": 4.6,
+    "synopsis": "At an elite New England liberal arts college, a charismatic classics professor introduces a tight-knit circle of eccentric, brilliant students to ancient Greek philosophy and aesthetics. As their intellectual obsession leads to isolating rituals, they cross moral boundaries, culminating in a murder that shatters their lives.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "dark academia",
+      "crime",
+      "literary"
+    ],
+    "author_bio": "American novelist and Pulitzer Prize winner known for immersive, meticulously crafted neo-romantic novels published once every decade to universal acclaim."
+  },
+  {
+    "id": "B057",
+    "title": "Sharp Objects",
+    "author": "Gillian Flynn",
+    "genre": "Mystery Thriller",
+    "price": 9.99,
+    "rating": 4.3,
+    "synopsis": "Fresh from a stay at a psych hospital, journalist Camille Preaker is sent by her editor to her tiny Missouri hometown of Wind Gap to cover the unsolved murders of two young girls. Staying with her neurotic mother and manipulative half-sister, Camille must confront her own traumatic past to solve the crimes.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "psychological",
+      "crime",
+      "dark"
+    ],
+    "author_bio": "American author and former television critic, renowned for dark, sharply plotted psychological thrillers featuring complex female antiheroes."
+  },
+  {
+    "id": "B058",
+    "title": "Big Little Lies",
+    "author": "Liane Moriarty",
+    "genre": "Mystery Thriller",
+    "price": 10.99,
+    "rating": 4.5,
+    "synopsis": "In an affluent seaside Australian community, three women with children entering kindergarten become fast friends: feisty Madeline, glamorous Celeste, and young single mom Jane. Beneath their polished lifestyles lie dark secrets, domestic turmoil, and escalating playground drama that explodes into murder at trivia night.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "women",
+      "comedy",
+      "suburban"
+    ],
+    "author_bio": "Australian author renowned for witty, suspenseful domestic dramas that peel back the manicured facades of suburban families and friendships."
+  },
+  {
+    "id": "B059",
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "genre": "Mystery Thriller",
+    "price": 11.49,
+    "rating": 4.5,
+    "synopsis": "Alicia Berenson is a famous painter who suddenly shoots her husband five times in the face and never speaks another word. Theo Faber, an ambitious forensic psychotherapist, takes a job at the secure psychiatric facility determined to unravel the mystery behind her silence through art and mythology.",
+    "tags": [
+      "mystery",
+      "thriller",
+      "psychological",
+      "suspense",
+      "twist"
+    ],
+    "author_bio": "British-Cypriot author and screenwriter whose psychological thrillers draw heavily on Greek tragedy, Freudian psychoanalysis, and unreliable narration."
+  },
+  {
+    "id": "B060",
+    "title": "The Thursday Murder Club",
+    "author": "Richard Osman",
+    "genre": "Mystery",
+    "price": 9.99,
+    "rating": 4.5,
+    "synopsis": "In a tranquil luxury retirement village in Kent, four unlikely friends in their late seventies meet weekly to investigate unsolved cold cases for fun. When a local property developer is found dead with a mysterious photograph nearby, the Thursday Murder Club finds itself in the middle of their first live homicide case.",
+    "tags": [
+      "mystery",
+      "comedy",
+      "crime",
+      "cozy",
+      "british"
+    ],
+    "author_bio": "British television presenter, producer, and comedian whose warm, witty murder mystery series featuring octogenarian sleuths became an international publishing phenomenon."
+  },
+  {
+    "id": "B061",
+    "title": "And Then There Were None",
+    "author": "Agatha Christie",
+    "genre": "Mystery",
+    "price": 8.49,
+    "rating": 4.7,
+    "synopsis": "Ten strangers with dark secrets in their pasts are lured to a secluded mansion on an isolated island off the Devon coast by an enigmatic host. When their host fails to appear and guests begin dying one by one according to a sinister nursery rhyme, the survivors realize the killer is among them.",
+    "tags": [
+      "mystery",
+      "classic",
+      "crime",
+      "suspense",
+      "island"
+    ],
+    "author_bio": "English crime writer recognized by Guinness World Records as the best-selling fiction writer of all time, creator of legendary detectives Hercule Poirot and Miss Marple."
+  },
+  {
+    "id": "B062",
+    "title": "Murder on the Orient Express",
+    "author": "Agatha Christie",
+    "genre": "Mystery",
+    "price": 8.99,
+    "rating": 4.6,
+    "synopsis": "Just after midnight, a heavy snowdrift stops the luxurious Orient Express dead in its tracks in the mountains of Yugoslavia. By morning, an American millionaire is found stabbed twelve times in his locked compartment. Detective Hercule Poirot must interrogate thirteen passengers to identify the killer before the train arrives.",
+    "tags": [
+      "mystery",
+      "classic",
+      "detective",
+      "train",
+      "suspense"
+    ],
+    "author_bio": "English crime writer recognized by Guinness World Records as the best-selling fiction writer of all time, creator of legendary detectives Hercule Poirot and Miss Marple."
+  },
+  {
+    "id": "B063",
+    "title": "Flowers for Algernon",
+    "author": "Daniel Keyes",
+    "genre": "Science Fiction",
+    "price": 9.49,
+    "rating": 4.6,
+    "synopsis": "Charlie Gordon, a thirty-two-year-old man with an intellectual disability, is selected for an experimental surgical procedure designed to artificially increase his intelligence, a treatment already proven successful on a laboratory mouse named Algernon. Through Charlie's poignant progress reports, the novel explores genius, empathy, and heartbreak.",
+    "tags": [
+      "sci-fi",
+      "emotional",
+      "classic",
+      "psychology",
+      "literary"
+    ],
+    "author_bio": "American author and psychologist whose poignant exploration of intellect, emotional isolation, and human dignity became an enduring classic taught worldwide."
+  },
+  {
+    "id": "B064",
+    "title": "Recursion",
+    "author": "Blake Crouch",
+    "genre": "Science Fiction",
+    "price": 11.99,
+    "rating": 4.6,
+    "synopsis": "In a world plagued by False Memory Syndrome—where individuals awake with vivid, fully formed memories of alternate lives they never lived—detective Barry Sutton and neuroscientist Helena Smith discover a technology capable of rewriting human memory, setting off a frantic race across collapsing timelines to save reality.",
+    "tags": [
+      "sci-fi",
+      "thriller",
+      "time travel",
+      "memory",
+      "suspense"
+    ],
+    "author_bio": "American novelist and screenwriter renowned for high-concept sci-fi thrillers that seamlessly fuse quantum physics, alternate realities, and emotional depth."
+  },
+  {
+    "id": "B065",
+    "title": "Dark Matter",
+    "author": "Blake Crouch",
+    "genre": "Science Fiction",
+    "price": 11.49,
+    "rating": 4.5,
+    "synopsis": "Jason Dessen is a college physics professor living a comfortable family life in Chicago when he is abducted, injected with an unknown drug, and awakens in a world where his life is completely different: he never married, and he has invented a multi-dimensional transport box. To return to his true family, Jason must navigate infinite parallel lives.",
+    "tags": [
+      "sci-fi",
+      "thriller",
+      "multiverse",
+      "mystery",
+      "action"
+    ],
+    "author_bio": "American novelist and screenwriter renowned for high-concept sci-fi thrillers that seamlessly fuse quantum physics, alternate realities, and emotional depth."
+  },
+  {
+    "id": "B066",
+    "title": "The Three-Body Problem",
+    "author": "Liu Cixin",
+    "genre": "Science Fiction",
+    "price": 13.99,
+    "rating": 4.6,
+    "synopsis": "During China's Cultural Revolution, astrophysicist Ye Wenjie makes secret contact with a dying alien civilization on the planet Trisolaris. When the Trisolarans decide to invade Earth across four centuries, human factions fracture between those eager to welcome the extraterrestrial conquerors and those resolved to fight for survival.",
+    "tags": [
+      "sci-fi",
+      "space",
+      "alien",
+      "physics",
+      "epic"
+    ],
+    "author_bio": "Chinese hard science fiction author and nine-time Galaxy Award winner who became the first Asian writer to win the Hugo Award for Best Novel."
+  },
+  {
+    "id": "B067",
+    "title": "Hyperion",
+    "author": "Dan Simmons",
+    "genre": "Science Fiction",
+    "price": 12.49,
+    "rating": 4.7,
+    "synopsis": "On the eve of an interstellar war that threatens the Hegemony of Man, seven pilgrims embark on a final voyage to the mysterious Time Tombs on the world of Hyperion. There dwells the Shrike, a terrifying, blade-covered creature of legend that can grant one pilgrim's wish while slaughtering the rest.",
+    "tags": [
+      "sci-fi",
+      "space",
+      "epic",
+      "literary",
+      "religion"
+    ],
+    "author_bio": "American science fiction, horror, and historical fiction writer celebrated for grandiose world-building, literary references, and epic scope."
+  },
+  {
+    "id": "B068",
+    "title": "Flowers in the Attic",
+    "author": "V.C. Andrews",
+    "genre": "Gothic Fiction",
+    "price": 8.99,
+    "rating": 4.1,
+    "synopsis": "Following the sudden death of their father, four siblings—Chris, Cathy, and the twins Cory and Carrie—are hidden away by their desperate mother in the upstairs attic of their wealthy, cruel grandmother's mansion. As days turn into years of confinement and neglect, the children forge dark survival bonds in isolation.",
+    "tags": [
+      "gothic",
+      "drama",
+      "family",
+      "dark",
+      "thriller"
+    ],
+    "author_bio": "American novelist whose gothic family sagas, scandalous secrets, and atmospheric suspense captivated millions of readers worldwide."
+  },
+  {
+    "id": "B069",
+    "title": "Rebecca",
+    "author": "Daphne du Maurier",
+    "genre": "Gothic Fiction",
+    "price": 9.49,
+    "rating": 4.6,
+    "synopsis": "A young, unnamed companion marries the brooding, aristocratic widower Maxim de Winter and arrives at his grand Cornish estate, Manderley. There, the new bride finds herself haunted by the lingering presence of Maxim's glamorous first wife, Rebecca, kept alive by the menacing housekeeper Mrs. Danvers.",
+    "tags": [
+      "gothic",
+      "romance",
+      "mystery",
+      "classic",
+      "thriller"
+    ],
+    "author_bio": "English author and playwright renowned for haunting gothic mysteries, psychological menace, and timeless romantic suspense set along the Cornish coast."
+  },
+  {
+    "id": "B070",
+    "title": "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "genre": "Classic Adventure",
+    "price": 11.49,
+    "rating": 4.8,
+    "synopsis": "Falsely accused of treason by jealous rivals on the eve of his wedding, young sailor Edmond Dantès is imprisoned in the island fortress of the Château d'If for fourteen years. Escaping with the secret location of a vast treasure on the island of Monte Cristo, he constructs a brilliant persona to execute meticulous revenge.",
+    "tags": [
+      "classic",
+      "adventure",
+      "revenge",
+      "epic",
+      "historical"
+    ],
+    "author_bio": "French historical novelist and playwright whose thrilling adventure classics of swashbuckling heroes, revenge, and justice remain immortal in world culture."
+  },
+  {
+    "id": "B071",
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "genre": "Classic Fiction",
+    "price": 13.99,
+    "rating": 4.7,
+    "synopsis": "Ex-convict Jean Valjean breaks parole in nineteenth-century France after serving nineteen years for stealing a loaf of bread. Reborn through an act of mercy, he builds a new life as a philanthropist and guardian to the orphan Cosette, all while relentlessly hunted across decades by the fanatical police inspector Javert.",
+    "tags": [
+      "classic",
+      "historical",
+      "drama",
+      "revolution",
+      "french"
+    ],
+    "author_bio": "French Romantic poet, dramatist, and novelist whose monumental social epics championed humanitarian justice and the plight of the downtrodden."
+  },
+  {
+    "id": "B072",
+    "title": "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "genre": "Classic Fiction",
+    "price": 10.99,
+    "rating": 4.6,
+    "synopsis": "Set amidst the aristocratic high society of Imperial Russia, the beautiful and charismatic Anna Karenina enters a passionate, scandalous extramarital affair with the dashing Count Vronsky. Parallel to Anna's tragic descent, the wealthy landowner Konstantin Levin searches for spiritual fulfillment, agricultural reform, and authentic love.",
+    "tags": [
+      "classic",
+      "russian",
+      "romance",
+      "tragedy",
+      "literary"
+    ],
+    "author_bio": "Russian literary titan considered one of the greatest novelists of all time, revered for his panoramic depiction of Russian society, morality, and spiritual searching."
+  },
+  {
+    "id": "B073",
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "Magical Realism",
+    "price": 11.49,
+    "rating": 4.6,
+    "synopsis": "Spanning seven generations of the Buendía family in the mythical Colombian town of Macondo, this magical realist masterpiece chronicles the rise and fall of their dynasty through civil wars, industrialization, miraculous phenomena, and inescapable cycles of solitude and passion.",
+    "tags": [
+      "magical realism",
+      "literary",
+      "latin american",
+      "classic",
+      "epic"
+    ],
+    "author_bio": "Colombian novelist, journalist, and Nobel laureate who popularized magical realism, weaving supernatural wonder into vibrant Latin American history."
+  },
+  {
+    "id": "B074",
+    "title": "Love in the Time of Cholera",
+    "author": "Gabriel García Márquez",
+    "genre": "Magical Realism",
+    "price": 10.49,
+    "rating": 4.5,
+    "synopsis": "In their youth, Florentino Ariza and Fermina Daza share a passionate, forbidden romance before Fermina chooses to marry a distinguished physician. Over the next fifty-one years, nine months, and four days, Florentino remains devoted to her memory, waiting for the opportunity to profess his eternal love once again.",
+    "tags": [
+      "romance",
+      "magical realism",
+      "literary",
+      "latin american",
+      "classic"
+    ],
+    "author_bio": "Colombian novelist, journalist, and Nobel laureate who popularized magical realism, weaving supernatural wonder into vibrant Latin American history."
+  },
+  {
+    "id": "B075",
+    "title": "The Bell Jar",
+    "author": "Sylvia Plath",
+    "genre": "Literary Fiction",
+    "price": 9.49,
+    "rating": 4.5,
+    "synopsis": "During a summer internship at a prestigious fashion magazine in New York City, brilliant college student Esther Greenwood finds herself increasingly alienated by social expectations and patriarchal pressures. Returning home to Massachusetts, she descends into severe clinical depression, poignantly depicted through the metaphor of a suffocating bell jar.",
+    "tags": [
+      "literary",
+      "classic",
+      "mental health",
+      "women",
+      "drama"
+    ],
+    "author_bio": "American poet and novelist whose confessional poetry and autobiographical fiction provided an unflinching, poetic portrait of clinical depression and female identity."
+  },
+  {
+    "id": "B076",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Gothic Horror",
+    "price": 7.99,
+    "rating": 4.5,
+    "synopsis": "Obsessed with unlocking the secrets of life and death, ambitious scientist Victor Frankenstein animates a humanoid creature assembled from graveyard remnants. Horrified by the grotesque reality of his creation, Victor abandons the monster, sparking a tragic cycle of rejection, yearning for companionship, and violent retribution.",
+    "tags": [
+      "gothic",
+      "horror",
+      "classic",
+      "sci-fi",
+      "philosophy"
+    ],
+    "author_bio": "English Romantic novelist who, at age nineteen, conceived the foundational science fiction masterpiece exploring scientific ambition, ethics, and alienation."
+  },
+  {
+    "id": "B077",
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "genre": "Gothic Horror",
+    "price": 7.99,
+    "rating": 4.5,
+    "synopsis": "English solicitor Jonathan Harker travels to the Carpathian Mountains of Transylvania to assist the aristocratic Count Dracula in purchasing real estate in London. When Dracula arrives in England to spread his vampiric curse, a small band of comrades led by Professor Abraham Van Helsing unites to destroy the ancient evil.",
+    "tags": [
+      "horror",
+      "gothic",
+      "classic",
+      "vampire",
+      "thriller"
+    ],
+    "author_bio": "Irish author whose 1897 gothic horror classic established the foundational mythology and psychological archetypes of the modern vampire in popular culture."
+  },
+  {
+    "id": "B078",
+    "title": "It",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "price": 14.99,
+    "rating": 4.6,
+    "synopsis": "In the town of Derry, Maine, seven outcast children known as the Losers' Club band together to confront a shape-shifting, malevolent entity that emerges from the sewers every twenty-seven years to prey on children, often taking the form of Pennywise the Dancing Clown. Twenty-seven years later, the adults must return to finish the fight.",
+    "tags": [
+      "horror",
+      "thriller",
+      "childhood",
+      "evil",
+      "classic"
+    ],
+    "author_bio": "Legendary American author termed the 'King of Horror', whose prolific body of work spans psychological terror, supernatural suspense, and poignant coming-of-age tales."
+  },
+  {
+    "id": "B079",
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "price": 11.99,
+    "rating": 4.7,
+    "synopsis": "Jack Torrance, an aspiring writer and recovering alcoholic, takes a job as the winter caretaker of the isolated Overlook Hotel in the Colorado Rockies, accompanied by his wife Wendy and gifted psychic son Danny. As winter storms trap the family, the hotel's sinister supernatural forces prey on Jack's fragile psyche.",
+    "tags": [
+      "horror",
+      "psychological",
+      "thriller",
+      "family",
+      "classic"
+    ],
+    "author_bio": "Legendary American author termed the 'King of Horror', whose prolific body of work spans psychological terror, supernatural suspense, and poignant coming-of-age tales."
+  },
+  {
+    "id": "B080",
+    "title": "Misery",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "price": 10.49,
+    "rating": 4.5,
+    "synopsis": "Bestselling romance author Paul Sheldon crashes his car in a blizzard in rural Colorado and is rescued by Annie Wilkes, a former nurse and his 'number one fan'. Discovering that Paul has killed off her beloved literary character Misery Chastain in his latest book, Annie holds him captive and forces him to write a revival novel under threat of brutal torture.",
+    "tags": [
+      "horror",
+      "thriller",
+      "psychological",
+      "suspense",
+      "dark"
+    ],
+    "author_bio": "Legendary American author termed the 'King of Horror', whose prolific body of work spans psychological terror, supernatural suspense, and poignant coming-of-age tales."
+  },
+  {
+    "id": "B081",
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "genre": "Philosophy",
+    "price": 6.99,
+    "rating": 4.5,
+    "synopsis": "Composed in ancient China over two thousand years ago, this timeless military treatise provides foundational insights into strategy, tactical deception, resource management, and conflict resolution. Its philosophy emphasizes winning without fighting, knowing oneself and the adversary, and mastering situational adaptability.",
+    "tags": [
+      "philosophy",
+      "strategy",
+      "classic",
+      "military",
+      "non-fiction"
+    ],
+    "author_bio": "Ancient Chinese military general, strategist, and philosopher credited with authoring the timeless treatise on strategic leadership, tactical deception, and statecraft."
+  },
+  {
+    "id": "B082",
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "genre": "Philosophy",
+    "price": 7.99,
+    "rating": 4.7,
+    "synopsis": "The private personal reflections of Roman Emperor Marcus Aurelius, written while commanding military campaigns on the Danube frontier. Through daily introspective notes, Marcus practices Stoic philosophy: cultivating self-discipline, accepting mortality, mastering the emotions, and performing one's duty to community and nature.",
+    "tags": [
+      "philosophy",
+      "stoicism",
+      "classic",
+      "self-help",
+      "non-fiction"
+    ],
+    "author_bio": "Roman Emperor and Stoic philosopher whose private journals of self-discipline, duty, and emotional resilience became one of history's greatest philosophical guides."
+  },
+  {
+    "id": "B083",
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "genre": "Psychology",
+    "price": 10.49,
+    "rating": 4.8,
+    "synopsis": "Psychiatrist Viktor Frankl draws on his harrowing experiences surviving Auschwitz and Dachau to explain how prisoners found the will to endure unimaginable suffering. The book presents Logotherapy—the belief that humanity's deepest drive is not pleasure or power, but the search for meaningful purpose in all circumstances.",
+    "tags": [
+      "psychology",
+      "memoir",
+      "philosophy",
+      "inspiring",
+      "non-fiction"
+    ],
+    "author_bio": "Austrian neurologist, psychiatrist, and Holocaust survivor who founded Logotherapy, arguing that man's primary motivational force is the search for meaning."
+  },
+  {
+    "id": "B084",
+    "title": "The Body Keeps the Score",
+    "author": "Bessel van der Kolk",
+    "genre": "Psychology",
+    "price": 14.49,
+    "rating": 4.7,
+    "synopsis": "Renowned trauma expert Dr. Bessel van der Kolk explores how traumatic stress physically reshapes the brain, nervous system, and immune response, locking survivors in states of hypervigilance and disconnection. The book presents innovative mind-body pathways for healing, including neurofeedback, EMDR, theater, and yoga.",
+    "tags": [
+      "psychology",
+      "trauma",
+      "health",
+      "non-fiction",
+      "science"
+    ],
+    "author_bio": "Dutch-American psychiatrist and trauma researcher whose pioneering work revolutionized clinical understanding of how physical bodies process and heal from trauma."
+  },
+  {
+    "id": "B085",
+    "title": "Outliers",
+    "author": "Malcolm Gladwell",
+    "genre": "Non-Fiction",
+    "price": 12.99,
+    "rating": 4.5,
+    "synopsis": "Malcolm Gladwell investigates the hidden factors that produce world-class success, demonstrating that extraordinary high-achievers—from Bill Gates to the Beatles—are not merely products of innate talent, but beneficiaries of timing, culture, demographic luck, and deliberate practice like the 10,000-hour rule.",
+    "tags": [
+      "non-fiction",
+      "psychology",
+      "success",
+      "society",
+      "science"
+    ],
+    "author_bio": "Canadian journalist and staff writer at The New Yorker celebrated for popularizing sociological, psychological, and statistical research through compelling narratives."
+  },
+  {
+    "id": "B086",
+    "title": "The Tipping Point",
+    "author": "Malcolm Gladwell",
+    "genre": "Non-Fiction",
+    "price": 11.99,
+    "rating": 4.4,
+    "synopsis": "Malcolm Gladwell explores the threshold moment—the tipping point—when an idea, social behavior, trend, or product crosses a critical mass and spreads like wildfire. By analyzing the Law of the Few (Connectors, Mavens, and Salesmen), the Stickiness Factor, and the Power of Context, he reveals how small changes spark epidemics.",
+    "tags": [
+      "non-fiction",
+      "sociology",
+      "psychology",
+      "business",
+      "ideas"
+    ],
+    "author_bio": "Canadian journalist and staff writer at The New Yorker celebrated for popularizing sociological, psychological, and statistical research through compelling narratives."
+  },
+  {
+    "id": "B087",
+    "title": "Blink",
+    "author": "Malcolm Gladwell",
+    "genre": "Non-Fiction",
+    "price": 11.49,
+    "rating": 4.3,
+    "synopsis": "Malcolm Gladwell investigates the science of rapid cognition—the spontaneous decisions we make in the blink of an eye. Drawing on neurobiology and psychology, the book demonstrates when snap judgments and thin-slicing outperform deliberate analysis, and how hidden biases can corrupt our intuitive reactions.",
+    "tags": [
+      "non-fiction",
+      "psychology",
+      "decision-making",
+      "science",
+      "behaviour"
+    ],
+    "author_bio": "Canadian journalist and staff writer at The New Yorker celebrated for popularizing sociological, psychological, and statistical research through compelling narratives."
+  },
+  {
+    "id": "B088",
+    "title": "Grit",
+    "author": "Angela Duckworth",
+    "genre": "Psychology",
+    "price": 12.49,
+    "rating": 4.5,
+    "synopsis": "Psychologist Angela Duckworth argues that the secret to outstanding achievement is not innate genius, but a unique blend of passion and long-term perseverance she calls 'grit'. Through research with West Point cadets, teachers, and national spelling bee finalists, she shows how grit can be nurtured and developed.",
+    "tags": [
+      "psychology",
+      "self-help",
+      "motivation",
+      "success",
+      "non-fiction"
+    ],
+    "author_bio": "American psychologist and researcher at the University of Pennsylvania whose groundbreaking research demonstrated passion and perseverance over raw talent."
+  },
+  {
+    "id": "B089",
+    "title": "The Innovator's Dilemma",
+    "author": "Clayton Christensen",
+    "genre": "Business",
+    "price": 13.99,
+    "rating": 4.4,
+    "synopsis": "Harvard professor Clayton Christensen explains how outstanding, well-managed companies can do everything right and still lose market leadership when confronted by disruptive technologies. The book outlines frameworks for established leaders to nurture innovative business models before incumbents are overtaken.",
+    "tags": [
+      "business",
+      "innovation",
+      "technology",
+      "strategy",
+      "non-fiction"
+    ],
+    "author_bio": "Harvard Business School professor and management guru who formulated the influential theory of 'disruptive innovation' shaping modern business strategy."
+  },
+  {
+    "id": "B090",
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "genre": "Business",
+    "price": 13.49,
+    "rating": 4.4,
+    "synopsis": "Jim Collins and his research team identify the characteristics that enabled a select group of companies to make the leap from mediocre performance to long-term excellence. The book outlines concepts like Level 5 Leadership, the Hedgehog Concept, the Flywheel effect, and confronting brutal facts while maintaining unwavering faith.",
+    "tags": [
+      "business",
+      "leadership",
+      "management",
+      "strategy",
+      "non-fiction"
+    ],
+    "author_bio": "American business consultant, author, and researcher on business longevity, organizational leadership, and what separates enduring great companies from mediocre ones."
+  },
+  {
+    "id": "B091",
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "genre": "Personal Finance",
+    "price": 13.99,
+    "rating": 4.7,
+    "synopsis": "Morgan Housel shares nineteen short stories illustrating the strange ways people think about wealth, greed, and happiness. Rather than treating money as a math problem, the book demonstrates that financial success is a soft skill where your behavior, emotional control, and patience matter far more than technical knowledge.",
+    "tags": [
+      "finance",
+      "psychology",
+      "money",
+      "investing",
+      "non-fiction"
+    ],
+    "author_bio": "Partner at Collaborative Fund and financial columnist whose behavioral finance essays explore how psychology, ego, and emotion dictate financial outcomes."
+  },
+  {
+    "id": "B092",
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "genre": "Science",
+    "price": 11.99,
+    "rating": 4.6,
+    "synopsis": "Renowned theoretical physicist Stephen Hawking provides a landmark exploration of cosmology, black holes, the Big Bang, general relativity, and quantum mechanics in accessible prose, guiding readers through the ongoing search for a unified Theory of Everything.",
+    "tags": [
+      "science",
+      "physics",
+      "space",
+      "non-fiction",
+      "classic"
+    ],
+    "author_bio": "English theoretical physicist, cosmologist, and author who served as Lucasian Professor of Mathematics at Cambridge, renowned for black hole and singularity theorems."
+  },
+  {
+    "id": "B093",
+    "title": "The Gene",
+    "author": "Siddhartha Mukherjee",
+    "genre": "Science",
+    "price": 14.49,
+    "rating": 4.6,
+    "synopsis": "Pulitzer Prize-winning oncologist Siddhartha Mukherjee weaves science, social history, and personal memoir into a definitive chronicle of the gene—the fundamental unit of heredity. From Mendel's pea plants to CRISPR gene editing, the book examines humanity's journey toward mastering our own biological blueprint.",
+    "tags": [
+      "science",
+      "biology",
+      "genetics",
+      "history",
+      "non-fiction"
+    ],
+    "author_bio": "Indian-American physician, oncologist, and Pulitzer Prize-winning author whose narrative histories of medicine explore cancer and genetics with poetic grace."
+  },
+  {
+    "id": "B094",
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "genre": "Science",
+    "price": 11.49,
+    "rating": 4.5,
+    "synopsis": "Richard Dawkins revolutionized evolutionary biology by proposing that the gene, rather than the organism or species, is the principal unit of natural selection. By explaining altruism, selfishness, and evolutionary stable strategies, the book introduces the gene-centric view of life and coins the concept of the meme.",
+    "tags": [
+      "science",
+      "evolution",
+      "biology",
+      "classic",
+      "non-fiction"
+    ],
+    "author_bio": "British evolutionary biologist, author, and fellow of the Royal Society who introduced the gene-centric view of evolution and coined the term 'meme'."
+  },
+  {
+    "id": "B095",
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "genre": "Science",
+    "price": 13.49,
+    "rating": 4.8,
+    "synopsis": "Astronomer Carl Sagan takes readers on an awe-inspiring voyage across fifteen billion years of cosmic evolution. Exploring science, history, philosophy, and the future of humanity, Cosmos celebrates the human quest to understand our place among the billions of galaxies in the universe.",
+    "tags": [
+      "science",
+      "space",
+      "astronomy",
+      "non-fiction",
+      "inspiring"
+    ],
+    "author_bio": "American astronomer, planetary scientist, and science communicator who inspired global awe for the universe through lyrical science writing and television."
+  },
+  {
+    "id": "B096",
+    "title": "The Buried Giant",
+    "author": "Kazuo Ishiguro",
+    "genre": "Fantasy",
+    "price": 11.99,
+    "rating": 4.2,
+    "synopsis": "In post-Arthurian Britain, an elderly British couple, Axl and Beatrice, set out on a journey across a mist-shrouded landscape to visit the son they barely remember. As they travel alongside a Saxon warrior and a legendary knight, they discover that a dragon's breath has cast a collective amnesia over the land, hiding dark memories of war.",
+    "tags": [
+      "fantasy",
+      "literary",
+      "historical",
+      "mystery",
+      "emotional"
+    ],
+    "author_bio": "British novelist and Nobel laureate in Literature praised for delicately restrained, emotionally devastating explorations of memory, self-deception, and human mortality."
+  },
+  {
+    "id": "B097",
+    "title": "Piranesi",
+    "author": "Susanna Clarke",
+    "genre": "Fantasy",
+    "price": 10.49,
+    "rating": 4.6,
+    "synopsis": "Piranesi lives in the House—an infinite labyrinth of classical halls lined with thousands of statues and ocean tides that crash through the lower floors. Believing himself to be one of only two living humans in the world, Piranesi's innocent reverence for his sanctuary is challenged when he discovers evidence of a dark third presence.",
+    "tags": [
+      "fantasy",
+      "mystery",
+      "literary",
+      "surreal",
+      "unique"
+    ],
+    "author_bio": "English author acclaimed for atmospheric, scholarly fantasies incorporating historical pastiche, magical realism, and subtle gothic mysteries."
+  },
+  {
+    "id": "B098",
+    "title": "Jonathan Strange and Mr Norrell",
+    "author": "Susanna Clarke",
+    "genre": "Fantasy",
+    "price": 14.99,
+    "rating": 4.5,
+    "synopsis": "Set in an alternate nineteenth-century England during the Napoleonic Wars, English magic has long been extinct until two rival magicians emerge: the scholarly recluse Mr. Norrell and his brilliant, reckless pupil Jonathan Strange. When Strange turns to dark, ancient fairy magic, their rivalry endangers the realm.",
+    "tags": [
+      "fantasy",
+      "historical",
+      "magic",
+      "british",
+      "epic"
+    ],
+    "author_bio": "English author acclaimed for atmospheric, scholarly fantasies incorporating historical pastiche, magical realism, and subtle gothic mysteries."
+  },
+  {
+    "id": "B099",
+    "title": "Circe",
+    "author": "Madeline Miller",
+    "genre": "Mythology Fiction",
+    "price": 11.99,
+    "rating": 4.7,
+    "synopsis": "In the palace of the sun god Helios, an unusual daughter named Circe is born with a strange voice and hidden witchcraft powers. Exiled to the deserted island of Aiaia, Circe hones her occult sorcery, taming wild beasts and crossing paths with legendary mythic figures like Daedalus, the Minotaur, and Odysseus.",
+    "tags": [
+      "mythology",
+      "fantasy",
+      "historical",
+      "women",
+      "literary"
+    ],
+    "author_bio": "American novelist with a background in Latin, Ancient Greek, and classical theater, renowned for breathtakingly lyrical reinterpretations of Greek mythology."
+  },
+  {
+    "id": "B100",
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "genre": "Mythology Fiction",
+    "price": 10.99,
+    "rating": 4.8,
+    "synopsis": "A breathtaking retelling of Homer's Iliad from the perspective of Patroclus, an exiled young prince who finds companionship, loyalty, and deep love in the golden prince Achilles. When Helen of Sparta is kidnapped and Greece marches on Troy, the lovers are swept into a brutal war of gods, glory, and tragic prophecy.",
+    "tags": [
+      "mythology",
+      "romance",
+      "historical",
+      "war",
+      "literary"
+    ],
+    "author_bio": "American novelist with a background in Latin, Ancient Greek, and classical theater, renowned for breathtakingly lyrical reinterpretations of Greek mythology."
+  }
+]

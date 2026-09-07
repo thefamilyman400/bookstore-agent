@@ -1,0 +1,215 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>JustBooks Agent — Project Status</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", system-ui, sans-serif; font-size: 14px; line-height: 1.6; background: #fff; color: #1f2328; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 60px; }
+  h1 { font-size: 22px; font-weight: 700; color: #1f2328; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #57606a; margin-bottom: 32px; }
+  h2 { font-size: 14px; font-weight: 700; color: #1f2328; text-transform: uppercase; letter-spacing: .5px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #e5e7eb; }
+  h3 { font-size: 13px; font-weight: 700; color: #1f2328; margin: 16px 0 6px; }
+  p  { font-size: 13.5px; color: #444d56; margin-bottom: 8px; }
+
+  /* Status badges */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .done    { background: #d1fae5; color: #065f46; }
+  .ready   { background: #e0e7ff; color: #3730a3; }
+  .pending { background: #fef3c7; color: #92400e; }
+
+  /* Stats row */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 8px; }
+  .stat { background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; }
+  .stat strong { display: block; font-size: 22px; font-weight: 700; color: #1f2328; }
+  .stat small   { font-size: 11px; color: #57606a; }
+
+  /* File tree */
+  .tree { background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 18px; font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; line-height: 1.8; color: #444d56; }
+  .tree .dir  { color: #3b82d4; font-weight: 600; }
+  .tree .new  { color: #059669; }
+  .tree .note { color: #57606a; font-style: italic; }
+
+  /* Feature table */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-size: 11px; font-weight: 700; color: #57606a; text-transform: uppercase; letter-spacing: .4px; padding: 6px 10px; border-bottom: 2px solid #e5e7eb; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; vertical-align: top; color: #444d56; }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { font-weight: 600; color: #1f2328; white-space: nowrap; }
+  td code { background: #f7f8fa; border: 1px solid #e5e7eb; padding: 1px 5px; border-radius: 4px; font-size: 11.5px; font-family: monospace; color: #444d56; }
+
+  /* Architecture box */
+  .arch { background: #f7f8fa; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px 18px; font-family: "SFMono-Regular", Consolas, monospace; font-size: 12px; line-height: 2; color: #444d56; }
+
+  /* Section cards */
+  .card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+  .card-title { font-weight: 700; font-size: 13.5px; color: #1f2328; margin-bottom: 4px; }
+  .card-sub   { font-size: 12px; color: #57606a; }
+  .card-body  { margin-top: 8px; font-size: 13px; color: #444d56; }
+  .card-body ul { padding-left: 16px; }
+  .card-body li { margin-bottom: 3px; }
+
+  /* Placeholder chips */
+  .chip { display: inline-block; background: #fff8e1; border: 1px solid #fbbf24; color: #92400e; font-size: 11px; font-family: monospace; padding: 1px 7px; border-radius: 4px; margin: 2px; }
+
+  .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e7eb; text-align: center; font-size: 12px; color: #57606a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>📚 JustBooks Agent — Project Status</h1>
+  <p class="subtitle">Agentic Bookstore · FastAPI · Multi-Agent MCP · Groq LLM · SQLite · AWS Fargate-ready</p>
+
+  
+  <div class="stats">
+    <div class="stat"><strong>46</strong><small>Tests passing</small></div>
+    <div class="stat"><strong>5</strong><small>Test files</small></div>
+    <div class="stat"><strong>4</strong><small>Agents</small></div>
+    <div class="stat"><strong>9</strong><small>MCP tools</small></div>
+  </div>
+
+  
+  <h2>Architecture</h2>
+  <div class="arch">
+Browser (Chat UI)
+    │
+    ▼
+FastAPI  app.py           ← REST /api/chat · /api/cart/add · JWT auth
+    │
+    ▼
+Orchestrator Agent        ← classifies intent → catalogue / cart / order / chitchat
+    │           │                  │
+    ▼           ▼                  ▼
+CatalogueAgent  CartAgent   OrderAgent
+    │               │              │
+    └───────────────┴──────────────┘
+                    │
+                    ▼
+         MCP Server  mcp_server.py  (stdio JSON-RPC 2.0)
+                    │
+              ┌─────┴─────┐
+              ▼           ▼
+          db.py       rag_store.py
+        (SQLite)    (TF-IDF / sentence-transformers)
+  </div>
+
+  
+  <h2>Project Structure</h2>
+  <div class="tree">
+<span class="dir">bookstore-agent/</span>
+├── <span class="new">Dockerfile</span>              <span class="note"># UBI9 Python 3.11-minimal, non-root</span>
+├── <span class="new">.dockerignore</span>
+├── .env.example
+├── <span class="new">task-definition.json</span>    <span class="note"># ECS Fargate task definition</span>
+├── requirements.txt
+├── app.py                  <span class="note"># FastAPI app + direct cart endpoints</span>
+├── auth_service.py         <span class="note"># JWT auth, bcrypt, refresh tokens</span>
+├── db.py                   <span class="note"># SQLite layer, DB_PATH env-aware</span>
+├── mcp_server.py           <span class="note"># stdio JSON-RPC 2.0 MCP server</span>
+├── rag_store.py            <span class="note"># TF-IDF / sentence-transformers RAG</span>
+├── <span class="dir new">agents/</span>
+│   ├── base_agent.py       <span class="note"># MCPClient + BaseAgent (Groq loop)</span>
+│   ├── orchestrator.py     <span class="note"># intent routing</span>
+│   ├── catalogue_agent.py  <span class="note"># search, detail, genres</span>
+│   ├── cart_agent.py       <span class="note"># add, view, remove</span>
+│   └── order_agent.py      <span class="note"># checkout, history, cancel</span>
+├── <span class="dir">data/</span>
+│   └── books.json          <span class="note"># 100 curated books</span>
+├── <span class="dir">static/</span>
+│   └── index.html          <span class="note"># Revamped UI (Inter+Lora, indigo palette)</span>
+└── <span class="dir">tests/</span>
+    ├── test_auth.py        <span class="note"># bcrypt, JWT, registration</span>
+    ├── test_mcp_tools.py   <span class="note"># all 9 tools + 48hr rule</span>
+    ├── test_mcp_server.py  <span class="note"># JSON-RPC subprocess round-trips</span>
+    ├── test_agents.py      <span class="note"># orchestrator routing + agents</span>
+    └── test_rag.py         <span class="note"># semantic search</span>
+  </div>
+
+  
+  <h2>Features Built</h2>
+  <table>
+    <tr><th>Area</th><th>What was built</th><th>Status</th></tr>
+    <tr><td>LLM Backend</td><td>Groq SDK with <code>GROQ_MODEL</code> env var — model-agnostic, reasoning model support (<code>msg.content or msg.reasoning</code>)</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>AWS Secrets</td><td>GROQ_API_KEY fetched from Secrets Manager at startup; falls back to mock LLM if AWS unavailable</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Multi-Agent MCP</td><td>Orchestrator classifies intent → 3 specialist agents call real stdio JSON-RPC 2.0 MCP server as subprocess</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Auth</td><td>JWT (HMAC-SHA256), bcrypt passwords, refresh tokens, token blacklist in SQLite, <code>JWT_SECRET</code> required at startup</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Cart</td><td>Direct <code>POST /api/cart/add</code> endpoint — no agent roundtrip, cart writes are awaited before agent sees state</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Orders</td><td>48-hour cancellation rule enforced in <code>cancel_order</code>; <code>placed_at</code> stored as UTC ISO string</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>RAG</td><td>TF-IDF cosine similarity; auto-upgrades to sentence-transformers if installed</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>UI</td><td>Revamped — Inter+Lora fonts, indigo palette, sidebar layout, bottom chat panel, typed animations, XSS-safe</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Security</td><td>bcrypt hashing, no hardcoded secrets, <code>escapeHtml</code> XSS fix, <code>load_dotenv</code> auto-loads <code>.env</code></td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>DB Layer</td><td>SQLite with proper context manager (close on exit); <code>DB_PATH</code> env var for EFS mount in Fargate</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Tests</td><td>46 unittest tests across auth, MCP tools, MCP subprocess JSON-RPC, agents, RAG — all passing</td><td><span class="badge done">✓ Done</span></td></tr>
+    <tr><td>Deployment</td><td>Dockerfile (UBI9 minimal, non-root UID 1001), <code>.dockerignore</code>, ECS Fargate task definition with EFS + Secrets Manager</td><td><span class="badge done">✓ Done</span></td></tr>
+  </table>
+
+  
+  <h2>Deployment Checklist</h2>
+
+  <div class="card">
+    <div class="card-title">1. Build &amp; push Docker image to ECR</div>
+    <div class="card-body">
+      <ul>
+        <li>Create ECR repository: <code>bookstore-agent</code></li>
+        <li><code>docker build -t bookstore-agent .</code></li>
+        <li><code>docker tag bookstore-agent &lt;ACCOUNT_ID&gt;.dkr.ecr.ap-south-1.amazonaws.com/bookstore-agent:latest</code></li>
+        <li><code>docker push ...</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">2. Create Secrets Manager secret</div>
+    <div class="card-sub">ARN referenced in task-definition.json as <code>bookstore-agent-secrets</code></div>
+    <div class="card-body">Store keys: <code>JWT_SECRET</code> · <code>GROQ_MODEL</code></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">3. Create EFS file system + access point</div>
+    <div class="card-sub">SQLite DB persists across task restarts</div>
+    <div class="card-body">Mount at <code>/bookstore</code> on EFS → <code>/data/db</code> in container</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">4. Replace placeholders in <code>task-definition.json</code></div>
+    <div class="card-body">
+      <span class="chip">&lt;ACCOUNT_ID&gt;</span>
+      <span class="chip">&lt;EFS_FILE_SYSTEM_ID&gt;</span>
+      <span class="chip">&lt;EFS_ACCESS_POINT_ID&gt;</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">5. IAM — Task Role permissions needed</div>
+    <div class="card-body">
+      <ul>
+        <li><code>secretsmanager:GetSecretValue</code> on both secret ARNs</li>
+        <li><code>elasticfilesystem:ClientMount</code> + <code>ClientWrite</code> on EFS resource</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">6. Register &amp; run</div>
+    <div class="card-body">
+      <ul>
+        <li><code>aws ecs register-task-definition --cli-input-json file://task-definition.json</code></li>
+        <li>Create ECS Service (Fargate, awsvpc, behind ALB on port 8000)</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <h2>Running Locally</h2>
+  <div class="tree">
+.\.venv\Scripts\uvicorn.exe app:app --reload --host 127.0.0.1 --port 8000
+<span class="note"># .env is auto-loaded by load_dotenv() in app.py — no manual env sourcing needed</span>
+  </div>
+
+  <div class="footer">Made with IBM Bob</div>
+</div>
+</body>
+</html>

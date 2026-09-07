@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JustBooks — Agentic Bookstore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:        #0d1117;
+      --ink-2:      #1c2333;
+      --ink-3:      #2d3748;
+      --surface:    #ffffff;
+      --surface-2:  #f6f8fb;
+      --surface-3:  #eef1f6;
+      --border:     #dde2ea;
+      --border-2:   #c8d0dc;
+      --muted:      #6b7a99;
+      --muted-2:    #9aa3b5;
+      --accent:     #4f46e5;
+      --accent-h:   #4338ca;
+      --accent-l:   #eef2ff;
+      --accent-l2:  #e0e7ff;
+      --emerald:    #059669;
+      --emerald-l:  #d1fae5;
+      --amber:      #d97706;
+      --amber-l:    #fef3c7;
+      --rose:       #e11d48;
+      --rose-l:     #ffe4e6;
+      --r:          10px;
+      --r-lg:       16px;
+      --r-sm:       6px;
+      --ease:       cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--surface-2);
+      color: var(--ink);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* ── Top strip ─────────────────────────────────────────────────────── */
+    .top-strip {
+      background: var(--ink);
+      color: #8b949e;
+      font-size: 12px;
+      padding: 6px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-strip b { color: #e6edf3; font-weight: 600; }
+    .strip-badge {
+      background: rgba(79,70,229,.25);
+      color: #a5b4fc;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* ── Navbar ────────────────────────────────────────────────────────── */
+    .navbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+    .brand-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -.3px;
+    }
+    .brand-name span { color: var(--accent); }
+    .brand-sub {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+
+    .nav-search {
+      flex: 1;
+      max-width: 480px;
+      position: relative;
+    }
+    .nav-search input {
+      width: 100%;
+      height: 38px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0 38px 0 16px;
+      font-size: 13.5px;
+      font-family: inherit;
+      color: var(--ink);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .nav-search input:focus {
+      outline: none;
+      background: var(--surface);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(79,70,229,.12);
+    }
+    .nav-search input::placeholder { color: var(--muted-2); }
+    .search-icon {
+      position: absolute; right: 12px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted); font-size: 15px; pointer-events: none;
+    }
+
+    .nav-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .btn-nav {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--ink-3);
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .btn-nav:hover { background: var(--surface-3); border-color: var(--border-2); }
+    .btn-nav.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+    .btn-nav.primary:hover { background: var(--accent-h); border-color: var(--accent-h); }
+    .cart-count {
+      background: var(--accent);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 999px;
+      min-width: 18px;
+      text-align: center;
+    }
+    .user-pill {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 3px 12px 3px 6px;
+      border-radius: 999px;
+      font-size: 13px; font-weight: 500;
+    }
+    .user-dot {
+      width: 26px; height: 26px;
+      background: var(--accent-l2);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    .btn-logout {
+      background: none; border: none;
+      color: var(--muted); font-size: 13px; font-weight: 600;
+      cursor: pointer; padding: 4px 8px; border-radius: 6px;
+      transition: color .15s, background .15s;
+    }
+    .btn-logout:hover { color: var(--rose); background: var(--rose-l); }
+
+    /* ── Page shell ────────────────────────────────────────────────────── */
+    .app-shell {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 28px 20px 120px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 28px;
+      flex: 1;
+    }
+
+    /* ── Left sidebar ──────────────────────────────────────────────────── */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar-section h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 10px;
+    }
+    .genre-list { display: flex; flex-direction: column; gap: 2px; }
+    .genre-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 7px 10px;
+      border-radius: var(--r-sm);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .12s, color .12s;
+    }
+    .genre-btn:hover { background: var(--surface-3); }
+    .genre-btn.active {
+      background: var(--accent-l);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .genre-count {
+      font-size: 11px;
+      color: var(--muted-2);
+      background: var(--surface-3);
+      padding: 1px 6px;
+      border-radius: 999px;
+    }
+    .genre-btn.active .genre-count {
+      background: var(--accent-l2);
+      color: var(--accent);
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .stat-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .stat-icon.indigo { background: var(--accent-l); }
+    .stat-icon.green  { background: var(--emerald-l); }
+    .stat-icon.amber  { background: var(--amber-l); }
+    .stat-text strong { display: block; font-size: 16px; font-weight: 700; color: var(--ink); }
+    .stat-text small  { font-size: 11px; color: var(--muted); }
+
+    /* ── Main content ──────────────────────────────────────────────────── */
+    .content-area {}
+
+    .content-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .content-header h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .content-header .count-badge {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Book grid ─────────────────────────────────────────────────────── */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 18px;
+    }
+    .book-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), border-color .18s;
+    }
+    .book-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(13,17,23,.1);
+      border-color: var(--border-2);
+    }
+    .book-spine {
+      height: 6px;
+      flex-shrink: 0;
+    }
+    .book-cover-area {
+      padding: 18px 16px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cover-id {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted-2);
+      letter-spacing: .4px;
+    }
+    .cover-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .cover-author {
+      font-size: 12px;
+      color: var(--muted);
+      font-style: italic;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .cover-synopsis {
+      font-size: 11.5px;
+      color: var(--muted);
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-foot {
+      padding: 10px 14px 12px;
+      border-top: 1px solid var(--surface-3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .rating-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--amber);
+      background: var(--amber-l);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .price-tag {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .card-btns {
+      display: flex;
+      gap: 6px;
+    }
+    .btn-card {
+      height: 28px;
+      padding: 0 10px;
+      border-radius: var(--r-sm);
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--ink-3);
+      transition: background .12s, border-color .12s, color .12s;
+    }
+    .btn-card:hover { background: var(--surface-3); border-color: var(--border-2); }
+    .btn-card.buy {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+    .btn-card.buy:hover { background: var(--accent-h); border-color: var(--accent-h); }
+
+    /* Spine colours per genre */
+    .spine-sf   { background: linear-gradient(90deg,#4f46e5,#818cf8); }
+    .spine-fant { background: linear-gradient(90deg,#7c3aed,#c084fc); }
+    .spine-myst { background: linear-gradient(90deg,#dc2626,#f87171); }
+    .spine-self { background: linear-gradient(90deg,#059669,#34d399); }
+    .spine-rom  { background: linear-gradient(90deg,#db2777,#f472b6); }
+    .spine-hist { background: linear-gradient(90deg,#b45309,#fbbf24); }
+    .spine-non  { background: linear-gradient(90deg,#334155,#64748b); }
+    .spine-bio  { background: linear-gradient(90deg,#0369a1,#38bdf8); }
+    .spine-hor  { background: linear-gradient(90deg,#1c1917,#57534e); }
+    .spine-biz  { background: linear-gradient(90deg,#1d4ed8,#60a5fa); }
+    .spine-def  { background: linear-gradient(90deg,#4f46e5,#a5b4fc); }
+
+    /* ── Chat panel (bottom slide-up) ──────────────────────────────────── */
+    .chat-trigger {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 45;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(79,70,229,.4);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .chat-trigger:hover { transform: scale(1.07); box-shadow: 0 6px 20px rgba(79,70,229,.5); }
+    .chat-trigger .chat-notif {
+      position: absolute;
+      top: -2px; right: -2px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--emerald);
+      border: 2px solid var(--surface-2);
+    }
+
+    .chat-panel-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(13,17,23,.35);
+      backdrop-filter: blur(2px);
+      z-index: 48;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .chat-panel-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    .chat-panel {
+      position: fixed;
+      bottom: -560px;
+      left: 50%; transform: translateX(-50%);
+      width: min(680px, 96vw);
+      height: 540px;
+      background: var(--surface);
+      border-radius: var(--r-lg) var(--r-lg) 0 0;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      z-index: 49;
+      display: flex;
+      flex-direction: column;
+      transition: bottom .28s var(--ease);
+      box-shadow: 0 -8px 32px rgba(13,17,23,.12);
+    }
+    .chat-panel.open { bottom: 0; }
+
+    .cp-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .cp-title {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .cp-avatar {
+      width: 32px; height: 32px;
+      background: var(--accent-l);
+      color: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700;
+    }
+    .cp-title h3 { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .cp-title p  { font-size: 11px; color: var(--muted); margin-top: 1px; }
+    .cp-actions { display: flex; align-items: center; gap: 8px; }
+    .cp-pill-bar {
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--surface-3);
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+    .cp-pill {
+      flex-shrink: 0;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-3);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .12s, border-color .12s, color .12s;
+    }
+    .cp-pill:hover { background: var(--accent-l); border-color: var(--accent-l2); color: var(--accent); }
+
+    .cp-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--surface-2);
+    }
+    .cp-msg {
+      display: flex;
+      gap: 9px;
+      max-width: 88%;
+    }
+    .cp-msg.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .msg-avatar {
+      width: 28px; height: 28px;
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; flex-shrink: 0;
+      font-weight: 700;
+    }
+    .cp-msg.bot .msg-avatar  { background: var(--accent-l); color: var(--accent); }
+    .cp-msg.user .msg-avatar { background: var(--accent); color: white; }
+    .msg-bubble {
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .cp-msg.user .msg-bubble {
+      background: var(--accent);
+      color: white;
+      border-bottom-right-radius: 3px;
+    }
+    .cp-msg.bot .msg-bubble {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 3px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .cp-msg.bot .msg-bubble code {
+      background: var(--surface-3);
+      color: var(--ink);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: 'Fira Mono', monospace;
+    }
+    .typing-dots span {
+      display: inline-block;
+      width: 6px; height: 6px;
+      background: var(--muted-2);
+      border-radius: 50%;
+      margin: 0 1px;
+      animation: bounce .9s infinite;
+    }
+    .typing-dots span:nth-child(2) { animation-delay: .15s; }
+    .typing-dots span:nth-child(3) { animation-delay: .3s; }
+    @keyframes bounce { 0%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-5px); } }
+
+    .cp-input-bar {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 9px;
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .cp-input-bar input {
+      flex: 1;
+      height: 38px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0 16px;
+      font-size: 13.5px;
+      font-family: inherit;
+      color: var(--ink);
+      background: var(--surface-2);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .cp-input-bar input:focus {
+      outline: none;
+      background: var(--surface);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(79,70,229,.1);
+    }
+    .cp-send {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background .15s, transform .15s;
+    }
+    .cp-send:hover { background: var(--accent-h); transform: scale(1.05); }
+
+    /* ── Cart drawer ───────────────────────────────────────────────────── */
+    .cart-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(13,17,23,.35);
+      backdrop-filter: blur(2px);
+      z-index: 50;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .cart-backdrop.open { opacity: 1; pointer-events: auto; }
+    .cart-drawer {
+      position: fixed;
+      top: 0; right: -420px;
+      width: 400px; max-width: 100vw;
+      height: 100vh;
+      background: var(--surface);
+      z-index: 51;
+      display: flex; flex-direction: column;
+      transition: right .28s var(--ease);
+      border-left: 1px solid var(--border);
+    }
+    .cart-drawer.open { right: 0; }
+    .cart-head {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cart-head h3 { font-size: 16px; font-weight: 700; color: var(--ink); }
+    .cart-body { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .cart-row {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 10px;
+      padding: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+    }
+    .cart-row-info h4 { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .cart-row-info p  { font-size: 12px; color: var(--muted); }
+    .cart-row-price   { font-size: 14px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+    .cart-foot {
+      padding: 18px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .cart-total { display: flex; justify-content: space-between; font-size: 16px; font-weight: 700; color: var(--ink); }
+    .btn-checkout {
+      background: var(--accent); color: white; border: none;
+      padding: 11px; border-radius: var(--r);
+      font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: background .15s;
+    }
+    .btn-checkout:hover { background: var(--accent-h); }
+
+    /* ── Book modal ────────────────────────────────────────────────────── */
+    .modal-bg {
+      position: fixed; inset: 0;
+      background: rgba(13,17,23,.55);
+      backdrop-filter: blur(4px);
+      z-index: 60;
+      display: none; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-bg.open { display: flex; }
+    .modal-box {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      max-width: 600px; width: 100%;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(13,17,23,.22);
+      animation: popIn .18s var(--ease);
+    }
+    @keyframes popIn { from { transform: scale(.96); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal-top {
+      padding: 22px 24px 18px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .modal-spine { height: 5px; margin: -22px -24px 18px; }
+    .modal-top h2 { font-family: 'Lora', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .modal-top p  { font-size: 13px; color: var(--muted); font-style: italic; }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--surface-3); border: 1px solid var(--border);
+      color: var(--muted); width: 28px; height: 28px;
+      border-radius: 50%; cursor: pointer; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, color .15s;
+    }
+    .modal-close:hover { background: var(--rose-l); color: var(--rose); border-color: var(--rose-l); }
+    .modal-mid { padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; }
+    .meta-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .meta-cell {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: var(--r);
+    }
+    .meta-cell small { display: block; font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 3px; }
+    .meta-cell strong { font-size: 14px; color: var(--ink); }
+    .label-sm { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 5px; display: block; }
+    .synopsis-txt { font-size: 13.5px; line-height: 1.6; color: var(--ink-3); }
+    .author-box { background: var(--surface-2); border: 1px solid var(--border); padding: 12px; border-radius: var(--r); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { background: var(--surface-3); color: var(--muted); font-size: 11.5px; font-weight: 500; padding: 3px 10px; border-radius: 999px; }
+    .modal-bot {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+      display: flex; justify-content: flex-end; gap: 10px;
+    }
+
+    /* ── Auth overlay ──────────────────────────────────────────────────── */
+    #auth-overlay {
+      position: fixed; inset: 0;
+      background: rgba(13,17,23,.7);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex; align-items: center; justify-content: center; padding: 20px;
+    }
+    .auth-box {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      width: 100%; max-width: 420px;
+      padding: 32px;
+      box-shadow: 0 24px 64px rgba(13,17,23,.25);
+    }
+    .auth-hd {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 24px;
+    }
+    .auth-mark {
+      width: 34px; height: 34px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 18px;
+    }
+    .auth-hd h2 { font-size: 18px; font-weight: 700; color: var(--ink); }
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+    .auth-tab {
+      flex: 1; padding: 9px;
+      text-align: center; font-size: 13.5px; font-weight: 600;
+      color: var(--muted); cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .auth-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .auth-form { display: none; flex-direction: column; gap: 14px; }
+    .auth-form.active { display: flex; }
+    .fg label { display: block; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .4px; }
+    .fg input {
+      width: 100%; padding: 9px 13px;
+      border: 1px solid var(--border); border-radius: var(--r);
+      font-size: 13.5px; font-family: inherit; color: var(--ink);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .fg input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,70,229,.1); }
+    .btn-auth {
+      background: var(--accent); color: white; border: none;
+      padding: 11px; border-radius: var(--r);
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: background .15s; margin-top: 4px;
+    }
+    .btn-auth:hover { background: var(--accent-h); }
+    .auth-err {
+      background: var(--rose-l); color: var(--rose);
+      padding: 9px 12px; border-radius: var(--r-sm);
+      font-size: 13px; display: none;
+    }
+    .auth-err.show { display: block; }
+
+    /* ── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .app-shell { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+    @media (max-width: 600px) {
+      .nav-search { display: none; }
+      .books-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+      .chat-panel { width: 100vw; border-radius: var(--r-lg) var(--r-lg) 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top strip -->
+  <div class="top-strip">
+    <span>📚 Welcome to <b>JustBooks</b> — Agentic Digital Library</span>
+    <span class="strip-badge" id="engine-status">⚡ Loading engine…</span>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="brand-mark">📖</div>
+        <div>
+          <div class="brand-name">Just<span>Books</span></div>
+          <div class="brand-sub">Agentic Library</div>
+        </div>
+      </a>
+
+      <div class="nav-search">
+        <input type="text" id="catalogue-search-input" placeholder="Search by title, author, genre…" oninput="handleSearch(this.value)" />
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <div class="nav-right">
+        <button class="btn-nav" onclick="toggleCartDrawer()">
+          🛒 Cart <span class="cart-count" id="cart-counter">0</span>
+        </button>
+
+        <div class="user-pill">
+          <div class="user-dot" id="user-initial">?</div>
+          <span id="user-email-display">Reader</span>
+        </div>
+
+        <button class="btn-logout" onclick="doLogout()">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- App shell -->
+  <div class="app-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h4>Browse by Genre</h4>
+        <div class="genre-list" id="genre-list">
+          <button class="genre-btn active" onclick="filterByGenre('All', this)">All Books <span class="genre-count" id="gc-all">0</span></button>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-row">
+          <div class="stat-icon indigo">📚</div>
+          <div class="stat-text">
+            <strong id="stat-total-books">—</strong>
+            <small>Books in catalogue</small>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-icon green">🤖</div>
+          <div class="stat-text">
+            <strong>Multi-Agent</strong>
+            <small>Catalogue · Cart · Orders</small>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-icon amber">⏱</div>
+          <div class="stat-text">
+            <strong>48 hr</strong>
+            <small>Flexible cancellation</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Quick prompts</h4>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <button class="btn-nav" style="width:100%;justify-content:flex-start;font-size:12px;" onclick="quickAsk('Find me a gripping psychological thriller')">🔍 Psychological thriller</button>
+          <button class="btn-nav" style="width:100%;justify-content:flex-start;font-size:12px;" onclick="quickAsk('Best sci-fi space adventure books')">🚀 Sci-fi space adventure</button>
+          <button class="btn-nav" style="width:100%;justify-content:flex-start;font-size:12px;" onclick="quickAsk('Show me my cart')">🛒 View my cart</button>
+          <button class="btn-nav" style="width:100%;justify-content:flex-start;font-size:12px;" onclick="quickAsk('Show my order history')">📦 Order history</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content-area">
+      <div class="content-header">
+        <h2>Library Catalogue</h2>
+        <span class="count-badge" id="showing-count">Loading…</span>
+      </div>
+      <div class="books-grid" id="books-grid-container"></div>
+    </main>
+  </div>
+
+  <!-- AI chat trigger FAB -->
+  <button class="chat-trigger" onclick="toggleChat()" title="Ask AI Assistant">
+    ✨
+    <span class="chat-notif"></span>
+  </button>
+
+  <!-- Chat panel -->
+  <div class="chat-panel-backdrop" id="chat-backdrop" onclick="toggleChat()"></div>
+  <div class="chat-panel" id="chat-panel">
+    <div class="cp-header">
+      <div class="cp-title">
+        <div class="cp-avatar">AI</div>
+        <div>
+          <h3>JustBooks AI Assistant</h3>
+          <p id="drawer-llm-label">Multi-agent · Groq Llama 3.3 · RAG</p>
+        </div>
+      </div>
+      <div class="cp-actions">
+        <button class="btn-nav" style="height:30px;padding:0 10px;font-size:12px;" onclick="clearChat()">Clear</button>
+        <button class="btn-nav" style="height:30px;width:30px;padding:0;font-size:14px;" onclick="toggleChat()">✕</button>
+      </div>
+    </div>
+    <div class="cp-pill-bar">
+      <button class="cp-pill" onclick="quickAsk('What genres do you have?')">Browse genres</button>
+      <button class="cp-pill" onclick="quickAsk('Recommend a mystery thriller')">Mystery pick</button>
+      <button class="cp-pill" onclick="quickAsk('Show me my cart')">My cart</button>
+      <button class="cp-pill" onclick="quickAsk('Show my order history')">My orders</button>
+      <button class="cp-pill" onclick="quickAsk('Best self-help books for productivity')">Self-help</button>
+    </div>
+    <div class="cp-messages" id="chat-messages">
+      <div class="cp-msg bot">
+        <div class="msg-avatar">AI</div>
+        <div class="msg-bubble">
+          Hi there! I'm your JustBooks AI — powered by a <strong>multi-agent system</strong>.<br><br>
+          Ask me to <strong>find books</strong>, manage your <strong>cart</strong>, place or cancel <strong>orders</strong>, or anything else about our catalogue.
+        </div>
+      </div>
+    </div>
+    <div class="cp-input-bar">
+      <input type="text" id="chat-input" placeholder="Ask about books, add to cart, checkout…" onkeydown="if(event.key==='Enter') sendMessage()" />
+      <button class="cp-send" onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <div class="cart-backdrop" id="cart-backdrop" onclick="toggleCartDrawer()"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-head">
+      <h3>Shopping Cart</h3>
+      <button class="btn-nav" style="height:30px;width:30px;padding:0;" onclick="toggleCartDrawer()">✕</button>
+    </div>
+    <div class="cart-body" id="cart-items-container">
+      <p style="color:var(--muted);text-align:center;margin-top:40px;font-size:13px;">Your cart is empty.<br>Browse books to add items.</p>
+    </div>
+    <div class="cart-foot">
+      <div class="cart-total"><span>Total</span><span id="cart-total-amount">$0.00</span></div>
+      <button class="btn-checkout" onclick="triggerCheckout()">Place Order via Agent</button>
+    </div>
+  </aside>
+
+  <!-- Book detail modal -->
+  <div class="modal-bg" id="book-modal">
+    <div class="modal-box">
+      <div class="modal-top">
+        <div class="modal-spine" id="modal-spine"></div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <h2 id="modal-title">Title</h2>
+        <p id="modal-author">by Author</p>
+      </div>
+      <div class="modal-mid">
+        <div class="meta-row">
+          <div class="meta-cell"><small>Genre</small><strong id="modal-genre">—</strong></div>
+          <div class="meta-cell"><small>Rating</small><strong id="modal-rating">—</strong></div>
+          <div class="meta-cell"><small>Price</small><strong id="modal-price" style="color:var(--accent)">—</strong></div>
+        </div>
+        <div>
+          <span class="label-sm">About the book</span>
+          <p class="synopsis-txt" id="modal-synopsis"></p>
+        </div>
+        <div class="author-box">
+          <span class="label-sm">About the author</span>
+          <p class="synopsis-txt" id="modal-author-bio" style="font-size:12.5px;margin-top:4px;"></p>
+        </div>
+        <div>
+          <span class="label-sm">Tags</span>
+          <div class="tag-row" id="modal-tags"></div>
+        </div>
+      </div>
+      <div class="modal-bot">
+        <button class="btn-nav" id="modal-ask-btn">✨ Ask AI</button>
+        <button class="btn-nav primary" id="modal-add-btn">🛒 Add to cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auth overlay -->
+  <div id="auth-overlay">
+    <div class="auth-box">
+      <div class="auth-hd">
+        <div class="auth-mark">📖</div>
+        <h2>Sign in to JustBooks</h2>
+      </div>
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Sign In</div>
+        <div class="auth-tab" id="tab-register" onclick="switchAuthTab('register')">Register</div>
+      </div>
+      <form class="auth-form active" id="form-login" onsubmit="doLogin(event)">
+        <div class="auth-err" id="login-error"></div>
+        <div class="fg"><label>Email</label><input type="email" id="login-email" placeholder="you@example.com" required /></div>
+        <div class="fg"><label>Password</label><input type="password" id="login-password" placeholder="••••••••" required /></div>
+        <button class="btn-auth" type="submit" id="login-btn">Sign In</button>
+      </form>
+      <form class="auth-form" id="form-register" onsubmit="doRegister(event)">
+        <div class="auth-err" id="register-error"></div>
+        <div class="fg"><label>Full name</label><input type="text" id="reg-name" placeholder="Alex Morgan" /></div>
+        <div class="fg"><label>Email</label><input type="email" id="reg-email" placeholder="you@example.com" required /></div>
+        <div class="fg"><label>Password (min 6 chars)</label><input type="password" id="reg-password" placeholder="••••••••" minlength="6" required /></div>
+        <button class="btn-auth" type="submit" id="register-btn">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const API = '';
+    let allBooks = [];
+    let sessionId = null;
+    let accessToken = null;
+    let refreshToken = null;
+    const chatHistory = [];
+    let localCart = [];
+
+    // ── Genre spine colours ──────────────────────────────────────────────
+    const spineClass = {
+      'Science Fiction': 'spine-sf',   'Fantasy': 'spine-fant',
+      'Mystery Thriller': 'spine-myst','Self-Help': 'spine-self',
+      'Romance': 'spine-rom',          'Historical Fiction': 'spine-hist',
+      'Non-Fiction': 'spine-non',      'Biography': 'spine-bio',
+      'Horror': 'spine-hor',           'Business': 'spine-biz',
+    };
+    function getSpine(genre) { return spineClass[genre] || 'spine-def'; }
+
+    // ── Auth ─────────────────────────────────────────────────────────────
+    function switchAuthTab(tab) {
+      ['login','register'].forEach(t => {
+        document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+        document.getElementById('form-' + t).classList.toggle('active', t === tab);
+      });
+    }
+    function showAuthError(id, msg) {
+      const el = document.getElementById(id + '-error');
+      el.textContent = msg; el.classList.add('show');
+    }
+    function clearAuthError(id) { document.getElementById(id + '-error').classList.remove('show'); }
+
+    async function doRegister(e) {
+      e.preventDefault(); clearAuthError('register');
+      const btn = document.getElementById('register-btn');
+      btn.disabled = true; btn.textContent = 'Creating account…';
+      try {
+        const res = await fetch(`${API}/api/auth/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: document.getElementById('reg-email').value,
+            password: document.getElementById('reg-password').value,
+            full_name: document.getElementById('reg-name').value || null,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) { showAuthError('register', data.detail || 'Registration failed'); return; }
+        await loginWithCredentials(document.getElementById('reg-email').value, document.getElementById('reg-password').value);
+      } catch { showAuthError('register', 'Server unreachable.'); }
+      finally { btn.disabled = false; btn.textContent = 'Create Account'; }
+    }
+
+    async function doLogin(e) {
+      e.preventDefault(); clearAuthError('login');
+      const btn = document.getElementById('login-btn');
+      btn.disabled = true; btn.textContent = 'Signing in…';
+      try {
+        await loginWithCredentials(document.getElementById('login-email').value, document.getElementById('login-password').value);
+      } catch { showAuthError('login', 'Server unreachable.'); }
+      finally { btn.disabled = false; btn.textContent = 'Sign In'; }
+    }
+
+    async function loginWithCredentials(email, password) {
+      const form = new URLSearchParams({ username: email, password });
+      const res = await fetch(`${API}/api/auth/login`, {
+        method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: form.toString(),
+      });
+      const data = await res.json();
+      if (!res.ok) { showAuthError('login', data.detail || 'Login failed'); return; }
+      accessToken  = data.access_token;
+      refreshToken = data.refresh_token || null;
+      localStorage.setItem('jb_access_token', accessToken);
+      localStorage.setItem('jb_refresh_token', refreshToken || '');
+      localStorage.setItem('jb_user_email', email);
+      document.getElementById('auth-overlay').style.display = 'none';
+      const initial = email[0].toUpperCase();
+      document.getElementById('user-initial').textContent = initial;
+      document.getElementById('user-email-display').textContent = email.split('@')[0];
+      initApp();
+    }
+
+    async function refreshAccessToken() {
+      if (!refreshToken) return false;
+      try {
+        const res = await fetch(`${API}/api/auth/refresh`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ refresh_token: refreshToken }),
+        });
+        if (!res.ok) { accessToken = null; refreshToken = null; localStorage.removeItem('jb_access_token'); localStorage.removeItem('jb_refresh_token'); return false; }
+        const data = await res.json();
+        accessToken = data.access_token;
+        refreshToken = data.refresh_token || refreshToken;
+        localStorage.setItem('jb_access_token', accessToken);
+        localStorage.setItem('jb_refresh_token', refreshToken);
+        return true;
+      } catch { return false; }
+    }
+
+    function doLogout() {
+      accessToken = refreshToken = sessionId = null;
+      ['jb_access_token','jb_refresh_token','jb_user_email'].forEach(k => localStorage.removeItem(k));
+      document.getElementById('auth-overlay').style.display = 'flex';
+    }
+
+    // ── App init ─────────────────────────────────────────────────────────
+    async function initApp() {
+      try {
+        const [sessData, infoData, booksData] = await Promise.all([
+          fetch(`${API}/api/session`).then(r => r.json()),
+          fetch(`${API}/api/info`).then(r => r.json()),
+          fetch(`${API}/api/books?limit=100`).then(r => r.json()),
+        ]);
+        sessionId = sessData.session_id;
+        document.getElementById('engine-status').textContent = `⚡ ${infoData.llm}`;
+        document.getElementById('drawer-llm-label').textContent = `Multi-agent · ${infoData.llm}`;
+        document.getElementById('stat-total-books').textContent = infoData.total_books;
+        allBooks = booksData.books || [];
+        renderGenreList(allBooks);
+        renderBooks(allBooks);
+      } catch(e) { console.error('initApp error:', e); }
+    }
+
+    // ── Catalogue rendering ──────────────────────────────────────────────
+    function renderGenreList(books) {
+      const counts = {};
+      books.forEach(b => { counts[b.genre] = (counts[b.genre] || 0) + 1; });
+      const genres = Object.keys(counts).sort();
+      const list = document.getElementById('genre-list');
+      document.getElementById('gc-all').textContent = books.length;
+      list.innerHTML = `<button class="genre-btn active" onclick="filterByGenre('All',this)">All Books <span class="genre-count">${books.length}</span></button>` +
+        genres.map(g => `<button class="genre-btn" onclick="filterByGenre('${escapeHtml(g)}',this)">${escapeHtml(g)} <span class="genre-count">${counts[g]}</span></button>`).join('');
+    }
+
+    function filterByGenre(genre, btn) {
+      document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderBooks(genre === 'All' ? allBooks : allBooks.filter(b => b.genre === genre));
+    }
+
+    function handleSearch(q) {
+      const query = q.toLowerCase().trim();
+      if (!query) { renderBooks(allBooks); return; }
+      renderBooks(allBooks.filter(b =>
+        b.title.toLowerCase().includes(query) ||
+        b.author.toLowerCase().includes(query) ||
+        b.genre.toLowerCase().includes(query) ||
+        (b.tags && b.tags.some(t => t.toLowerCase().includes(query)))
+      ));
+    }
+
+    function renderBooks(books) {
+      document.getElementById('showing-count').textContent = `${books.length} book${books.length !== 1 ? 's' : ''}`;
+      const grid = document.getElementById('books-grid-container');
+      if (!books.length) {
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:48px;color:var(--muted);font-size:14px;">No books match your search.</div>`;
+        return;
+      }
+      grid.innerHTML = books.map(b => `
+        <div class="book-card" onclick="openBookModal('${b.id}')">
+          <div class="book-spine ${getSpine(b.genre)}"></div>
+          <div class="book-cover-area">
+            <div class="cover-id">${b.id}</div>
+            <div class="cover-title">${escapeHtml(b.title)}</div>
+            <div class="cover-author">${escapeHtml(b.author)}</div>
+            <div class="cover-synopsis">${escapeHtml(b.synopsis)}</div>
+          </div>
+          <div class="card-foot">
+            <div class="card-meta">
+              <span class="rating-tag">★ ${b.rating}</span>
+              <span class="price-tag">$${b.price.toFixed(2)}</span>
+            </div>
+            <div class="card-btns" onclick="event.stopPropagation()">
+              <button class="btn-card buy" onclick="quickAddToCart('${b.id}')">Add</button>
+              <button class="btn-card" onclick="quickAskAboutBook('${b.id}','${escapeHtml(b.title)}')">Ask</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ── Book modal ───────────────────────────────────────────────────────
+    function openBookModal(id) {
+      const b = allBooks.find(x => x.id === id);
+      if (!b) return;
+      document.getElementById('modal-title').textContent   = b.title;
+      document.getElementById('modal-author').textContent  = `by ${b.author}`;
+      document.getElementById('modal-genre').textContent   = b.genre;
+      document.getElementById('modal-rating').textContent  = `★ ${b.rating}`;
+      document.getElementById('modal-price').textContent   = `$${b.price.toFixed(2)}`;
+      document.getElementById('modal-synopsis').textContent = b.synopsis;
+      document.getElementById('modal-author-bio').textContent = b.author_bio || `Renowned author in ${b.genre}.`;
+      document.getElementById('modal-spine').className = `modal-spine ${getSpine(b.genre)}`;
+      document.getElementById('modal-tags').innerHTML = (b.tags || []).map(t => `<span class="tag">#${t}</span>`).join('');
+      document.getElementById('modal-add-btn').onclick = () => { quickAddToCart(b.id); closeModal(); };
+      document.getElementById('modal-ask-btn').onclick = () => { quickAskAboutBook(b.id, b.title); closeModal(); };
+      document.getElementById('book-modal').classList.add('open');
+    }
+    function closeModal() { document.getElementById('book-modal').classList.remove('open'); }
+
+    // ── Chat panel ───────────────────────────────────────────────────────
+    function toggleChat() {
+      document.getElementById('chat-panel').classList.toggle('open');
+      document.getElementById('chat-backdrop').classList.toggle('open');
+    }
+    function clearChat() {
+      chatHistory.length = 0;
+      const msgs = document.getElementById('chat-messages');
+      msgs.innerHTML = `<div class="cp-msg bot"><div class="msg-avatar">AI</div><div class="msg-bubble">Chat cleared. How can I help?</div></div>`;
+    }
+    function quickAsk(prompt) {
+      if (!document.getElementById('chat-panel').classList.contains('open')) toggleChat();
+      document.getElementById('chat-input').value = prompt;
+      sendMessage();
+    }
+    function quickAskAboutBook(id, title) {
+      quickAsk(`Tell me about [${id}] ${title} and why I should read it.`);
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text || !sessionId || !accessToken) return;
+      input.value = '';
+      appendMsg('user', text);
+      chatHistory.push({ role: 'user', content: text });
+
+      // Typing indicator
+      const typingId = appendTyping();
+
+      try {
+        let res = await fetch(`${API}/api/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${accessToken}` },
+          body: JSON.stringify({ session_id: sessionId, messages: chatHistory }),
+        });
+        if (res.status === 401) {
+          const ok = await refreshAccessToken();
+          if (ok) res = await fetch(`${API}/api/chat`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${accessToken}` },
+            body: JSON.stringify({ session_id: sessionId, messages: chatHistory }),
+          });
+        }
+        removeTyping(typingId);
+        if (res.status === 401) { doLogout(); return; }
+        const data = await res.json();
+        const reply = data.reply || 'Sorry, I could not process that.';
+        appendMsg('bot', reply);
+        chatHistory.push({ role: 'assistant', content: reply });
+        parseCartCount(reply);
+      } catch {
+        removeTyping(typingId);
+        appendMsg('bot', '⚠️ Could not reach the backend agent.');
+      }
+    }
+
+    function appendMsg(role, text) {
+      const wrap = document.createElement('div');
+      wrap.className = `cp-msg ${role}`;
+      wrap.innerHTML = `<div class="msg-avatar">${role === 'user' ? '👤' : 'AI'}</div><div class="msg-bubble">${renderMarkdown(text)}</div>`;
+      const msgs = document.getElementById('chat-messages');
+      msgs.appendChild(wrap);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function appendTyping() {
+      const id = 'typing-' + Date.now();
+      const wrap = document.createElement('div');
+      wrap.className = 'cp-msg bot';
+      wrap.id = id;
+      wrap.innerHTML = `<div class="msg-avatar">AI</div><div class="msg-bubble"><span class="typing-dots"><span></span><span></span><span></span></span></div>`;
+      const msgs = document.getElementById('chat-messages');
+      msgs.appendChild(wrap);
+      msgs.scrollTop = msgs.scrollHeight;
+      return id;
+    }
+    function removeTyping(id) { const el = document.getElementById(id); if (el) el.remove(); }
+
+    function escapeHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+    }
+    function renderMarkdown(text) {
+      return escapeHtml(text)
+        .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+        .replace(/`([^`]+)`/g,'<code>$1</code>')
+        .replace(/\n/g,'<br>');
+    }
+
+    // ── Cart ─────────────────────────────────────────────────────────────
+    function toggleCartDrawer() {
+      document.getElementById('cart-drawer').classList.toggle('open');
+      document.getElementById('cart-backdrop').classList.toggle('open');
+    }
+
+    async function quickAddToCart(id) {
+      const b = allBooks.find(x => x.id === id);
+      if (!b || !sessionId || !accessToken) return;
+      // Update local UI immediately
+      const existing = localCart.find(i => i.id === id);
+      if (existing) existing.quantity++;
+      else localCart.push({ ...b, quantity: 1 });
+      updateCartUI();
+      // Write directly to the backend cart (no agent roundtrip)
+      await fetch(`${API}/api/cart/add`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${accessToken}` },
+        body: JSON.stringify({ session_id: sessionId, book_id: id, quantity: 1 }),
+      });
+    }
+
+    function updateCartUI() {
+      const count = localCart.reduce((s,i) => s + i.quantity, 0);
+      const total = localCart.reduce((s,i) => s + i.price * i.quantity, 0);
+      document.getElementById('cart-counter').textContent = count;
+      document.getElementById('cart-total-amount').textContent = `$${total.toFixed(2)}`;
+      const body = document.getElementById('cart-items-container');
+      if (!localCart.length) {
+        body.innerHTML = `<p style="color:var(--muted);text-align:center;margin-top:40px;font-size:13px;">Your cart is empty.</p>`;
+        return;
+      }
+      body.innerHTML = localCart.map(item => `
+        <div class="cart-row">
+          <div class="cart-row-info">
+            <h4>${escapeHtml(item.title)}</h4>
+            <p>Qty ${item.quantity} × $${item.price.toFixed(2)}</p>
+          </div>
+          <div class="cart-row-price">$${(item.price * item.quantity).toFixed(2)}</div>
+        </div>
+      `).join('');
+    }
+
+    function triggerCheckout() {
+      toggleCartDrawer();
+      quickAsk('Checkout to 123 Main Street, New York, NY 10001');
+    }
+
+    function parseCartCount(reply) {
+      const m = reply.match(/(\d+)\s+item\(s\)/i);
+      if (m) document.getElementById('cart-counter').textContent = m[1];
+    }
+
+    // ── Session restore ──────────────────────────────────────────────────
+    window.addEventListener('DOMContentLoaded', async () => {
+      const savedAccess  = localStorage.getItem('jb_access_token');
+      const savedRefresh = localStorage.getItem('jb_refresh_token');
+      const savedEmail   = localStorage.getItem('jb_user_email');
+      if (savedAccess && savedEmail) {
+        accessToken = savedAccess; refreshToken = savedRefresh;
+        try {
+          let res = await fetch(`${API}/api/auth/me`, { headers: { 'Authorization': `Bearer ${accessToken}` } });
+          if (res.status === 401 && refreshToken) {
+            const ok = await refreshAccessToken();
+            if (ok) res = await fetch(`${API}/api/auth/me`, { headers: { 'Authorization': `Bearer ${accessToken}` } });
+          }
+          if (res.ok) {
+            document.getElementById('auth-overlay').style.display = 'none';
+            document.getElementById('user-initial').textContent = savedEmail[0].toUpperCase();
+            document.getElementById('user-email-display').textContent = savedEmail.split('@')[0];
+            initApp();
+            return;
+          }
+        } catch {}
+        ['jb_access_token','jb_refresh_token','jb_user_email'].forEach(k => localStorage.removeItem(k));
+      }
+      // No saved session — check if any user exists; if DB is fresh, default to Register tab
+      try {
+        const probe = await fetch(`${API}/api/auth/me`, { headers: { 'Authorization': 'Bearer invalid' } });
+        // A 401 means the server is up but unauthenticated — that's fine, stay on login
+      } catch {}
+      document.getElementById('auth-overlay').style.display = 'flex';
+      // Default to Register tab so new users don't get confused by "wrong credentials"
+      if (!localStorage.getItem('jb_user_email')) switchAuthTab('register');
+    });
+  </script>
+</body>
+</html>

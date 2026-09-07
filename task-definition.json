@@ -1,0 +1,76 @@
+{
+  "family": "bookstore-agent",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ecsTaskExecutionRole",
+  "taskRoleArn":      "arn:aws:iam::<ACCOUNT_ID>:role/bookstore-agent-task-role",
+  "containerDefinitions": [
+    {
+      "name": "bookstore-agent",
+      "image": "<ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/bookstore-agent:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "AWS_DEFAULT_REGION", "value": "ap-south-1" },
+        { "name": "DB_PATH",            "value": "/data/db/bookstore.db" }
+      ],
+      "secrets": [
+        {
+          "name":      "JWT_SECRET",
+          "valueFrom": "arn:aws:secretsmanager:ap-south-1:<ACCOUNT_ID>:secret:bookstore-agent-secrets:JWT_SECRET::"
+        },
+        {
+          "name":      "GROQ_API_KEY",
+          "valueFrom": "arn:aws:secretsmanager:ap-south-1:913524927483:secret:inc-assistant-api-keys-AKmRZ2:GROQ_API_KEY::"
+        },
+        {
+          "name":      "GROQ_MODEL",
+          "valueFrom": "arn:aws:secretsmanager:ap-south-1:<ACCOUNT_ID>:secret:bookstore-agent-secrets:GROQ_MODEL::"
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume":  "bookstore-db",
+          "containerPath": "/data/db",
+          "readOnly": false
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group":         "/ecs/bookstore-agent",
+          "awslogs-region":        "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "healthCheck": {
+        "command":     ["CMD-SHELL", "curl -f http://localhost:8000/api/info || exit 1"],
+        "interval":    30,
+        "timeout":     5,
+        "retries":     3,
+        "startPeriod": 15
+      }
+    }
+  ],
+  "volumes": [
+    {
+      "name": "bookstore-db",
+      "efsVolumeConfiguration": {
+        "fileSystemId":          "<EFS_FILE_SYSTEM_ID>",
+        "rootDirectory":         "/bookstore",
+        "transitEncryption":     "ENABLED",
+        "authorizationConfig": {
+          "accessPointId": "<EFS_ACCESS_POINT_ID>",
+          "iam":           "ENABLED"
+        }
+      }
+    }
+  ]
+}
