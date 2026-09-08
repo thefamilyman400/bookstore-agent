@@ -1,4 +1,5 @@
 {
+  "_comment": "Reference template — deploy/ecs_deploy.sh renders this dynamically from deploy/.env.infra. Do NOT use this file directly with 'aws ecs register-task-definition'.",
   "family": "bookstore-agent",
   "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
@@ -47,7 +48,8 @@
         "options": {
           "awslogs-group":         "/ecs/bookstore-agent",
           "awslogs-region":        "ap-south-1",
-          "awslogs-stream-prefix": "ecs"
+          "awslogs-stream-prefix": "ecs",
+          "awslogs-create-group":  "false"
         }
       },
       "healthCheck": {
@@ -63,9 +65,9 @@
     {
       "name": "bookstore-db",
       "efsVolumeConfiguration": {
-        "fileSystemId":          "<EFS_FILE_SYSTEM_ID>",
-        "rootDirectory":         "/bookstore",
-        "transitEncryption":     "ENABLED",
+        "fileSystemId":      "<EFS_FILE_SYSTEM_ID>",
+        "rootDirectory":     "/",
+        "transitEncryption": "ENABLED",
         "authorizationConfig": {
           "accessPointId": "<EFS_ACCESS_POINT_ID>",
           "iam":           "ENABLED"

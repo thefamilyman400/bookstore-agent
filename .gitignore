@@ -9,3 +9,4 @@ server_out.txt
 server_err.txt
 .DS_Store
 Thumbs.db
+deploy/.env.infra
