@@ -1,30 +1,15 @@
-# ── Build stage ────────────────────────────────────────────────────────────────
-FROM registry.access.redhat.com/ubi9/python-311:latest AS builder
-
-USER 0
-
-WORKDIR /app
-
-COPY requirements.txt .
-
-# Install dependencies into the UBI Python environment
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
-
-
-# ── Runtime stage ─────────────────────────────────────────────────────────────
 FROM registry.access.redhat.com/ubi9/python-311:latest
 
 USER 0
 
 WORKDIR /app
 
-# Copy the Python environment from the builder
-COPY --from=builder /opt/app-root/lib64/python3.11/site-packages \
-    /opt/app-root/lib64/python3.11/site-packages
+# Install Python dependencies into the same Python environment
+# that will run the application.
+COPY requirements.txt .
 
-COPY --from=builder /opt/app-root/lib/python3.11/site-packages \
-    /opt/app-root/lib/python3.11/site-packages
+RUN python -m pip install --no-cache-dir --upgrade pip \
+    && python -m pip install --no-cache-dir -r requirements.txt
 
 # Copy application source
 COPY agents/        ./agents/
@@ -36,11 +21,14 @@ COPY db.py          .
 COPY mcp_server.py  .
 COPY rag_store.py   .
 
+# Persistent SQLite database location
 ENV DB_PATH=/data/db/bookstore.db
 
-RUN mkdir -p /data/db && \
-    chown -R 1001:1001 /app /data
+# Prepare runtime directories and permissions
+RUN mkdir -p /data/db \
+    && chown -R 1001:1001 /app /data
 
+# Run the application as the existing non-root UBI user
 USER 1001
 
 EXPOSE 8000
