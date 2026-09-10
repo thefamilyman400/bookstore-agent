@@ -1,5 +1,5 @@
 # ── Build stage ────────────────────────────────────────────────────────────────
-FROM registry.redhat.io/ubi9/python-311-minimal:latest AS builder
+FROM registry.access.redhat.com/ubi9/python-311:latest AS builder
 
 WORKDIR /app
 
