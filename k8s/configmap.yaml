@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: justbooks-config
+  namespace: justbooks
+data:
+  AWS_DEFAULT_REGION: "ap-south-1"
+  LOG_LEVEL: "INFO"
+  DB_PATH: "/data/db/bookstore.db"
+  CORS_ORIGINS: "*"

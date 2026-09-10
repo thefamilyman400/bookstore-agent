@@ -4,14 +4,38 @@ FastAPI backend — serves the chat API and the static UI.
 from __future__ import annotations
 import json
 import logging
+import logging.config
 import os
 import uuid
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 # Load .env file before anything else so all env vars are available
 from dotenv import load_dotenv
 load_dotenv(dotenv_path=Path(__file__).parent / ".env", override=False)
+
+# ── Structured JSON logging (emitted before any other import so all loggers
+#    inherit this config, including uvicorn's access log handler) ───────────────
+_LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO").upper()
+logging.config.dictConfig({
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "json": {
+            "()": "logging.Formatter",
+            "fmt": '{"time":"%(asctime)s","level":"%(levelname)s","logger":"%(name)s","message":"%(message)s"}',
+            "datefmt": "%Y-%m-%dT%H:%M:%S",
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "json",
+            "stream": "ext://sys.stdout",
+        }
+    },
+    "root": {"level": _LOG_LEVEL, "handlers": ["console"]},
+})
 
 import boto3
 from botocore.exceptions import BotoCoreError, ClientError
@@ -63,9 +87,12 @@ from auth_service import router as auth_router, get_current_user
 
 app = FastAPI(title="Agentic Bookstore", version="1.0")
 
+# CORS origins: comma-separated list in CORS_ORIGINS env var, defaults to * for
+# local dev. Set to your frontend domain(s) in production.
+_cors_origins = os.environ.get("CORS_ORIGINS", "*").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_cors_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -92,6 +119,15 @@ class ChatRequest(BaseModel):
 @app.get("/")
 def serve_ui():
     return FileResponse(str(STATIC_DIR / "index.html"))
+
+
+@app.get("/health", tags=["ops"])
+def health():
+    """Liveness and readiness probe endpoint for Kubernetes.
+    Returns 200 as long as the process is running. Does NOT hit the DB or LLM —
+    those are checked by the /api/info endpoint (used as a startup probe).
+    """
+    return {"status": "ok"}
 
 
 @app.get("/api/info")

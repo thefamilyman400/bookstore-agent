@@ -8,16 +8,32 @@ __pycache__/
 venv/
 env/
 
-# Environment secrets
+# Environment secrets — never in the image
 .env
 
 # Local database
 bookstore.db
 
+# Tests — not needed at runtime
+tests/
+
+# Deployment scripts — not needed in the image
+deploy/
+task-definition.json
+
+# Documentation
+*.md
+*.html
+
+# Git
+.git/
+.gitignore
+
 # Dev artefacts
 server_out.txt
 server_err.txt
 *.log
+justbooks-agent-project-status.html
 
 # OS noise
 .DS_Store
