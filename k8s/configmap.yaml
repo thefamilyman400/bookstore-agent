@@ -8,3 +8,4 @@ data:
   LOG_LEVEL: "INFO"
   DB_PATH: "/data/db/bookstore.db"
   CORS_ORIGINS: "*"
+  GROQ_MODEL: "openai/gpt-oss-120b"
