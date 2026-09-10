@@ -3,6 +3,8 @@ FROM registry.access.redhat.com/ubi9/python-311:latest AS builder
 
 WORKDIR /app
 
+USER 0
+
 # Install dependencies into a local prefix so the runtime stage can copy them
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip \
