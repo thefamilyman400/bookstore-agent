@@ -14,9 +14,6 @@ FROM registry.redhat.io/ubi9/python-311-minimal:latest
 # Temporarily switch to root to create the application user
 USER 0
 
-# Create a non-root user
-RUN useradd -m -u 1001 appuser
-
 WORKDIR /app
 
 # Copy installed packages from builder
