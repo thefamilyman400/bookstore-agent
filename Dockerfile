@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir --upgrade pip \
  && pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 # ── Runtime stage ───────────────────────────────────────────────────────────────
-FROM registry.redhat.io/ubi9/python-311-minimal:latest
+FROM registry.access.redhat.com/ubi9/python-311:latest
 
 # Temporarily switch to root to create the application user
 USER 0
