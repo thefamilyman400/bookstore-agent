@@ -7,20 +7,24 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+# Install dependencies into the UBI Python environment
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 
-# ── Runtime stage ───────────────────────────────────────────────────────────────
+# ── Runtime stage ─────────────────────────────────────────────────────────────
 FROM registry.access.redhat.com/ubi9/python-311:latest
 
 USER 0
 
 WORKDIR /app
 
-# Copy Python packages from the builder's actual site-packages location
+# Copy the Python environment from the builder
 COPY --from=builder /opt/app-root/lib64/python3.11/site-packages \
     /opt/app-root/lib64/python3.11/site-packages
+
+COPY --from=builder /opt/app-root/lib/python3.11/site-packages \
+    /opt/app-root/lib/python3.11/site-packages
 
 # Copy application source
 COPY agents/        ./agents/
