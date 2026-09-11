@@ -27,6 +27,14 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
+      - name: Test SSM connection
+        run: |
+          aws ssm send-command \
+            --region ${{ env.AWS_REGION }} \
+            --instance-ids i-09178c13cf6536c6b \
+            --document-name "AWS-RunShellScript" \
+            --parameters 'commands=["echo GITHUB_ACTIONS_SSM_SUCCESS"]'
+
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
