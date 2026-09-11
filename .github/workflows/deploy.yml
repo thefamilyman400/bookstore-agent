@@ -45,7 +45,7 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          aws ssm send-command \
+          COMMAND_ID=$(aws ssm send-command \
             --region "$AWS_REGION" \
             --instance-ids "$EC2_INSTANCE_ID" \
             --document-name "AWS-RunShellScript" \
@@ -54,4 +54,41 @@ jobs:
               "kubectl create secret docker-registry ecr-registry --docker-server=913524927483.dkr.ecr.ap-south-1.amazonaws.com --docker-username=AWS --docker-password=\"$ECR_PASSWORD\" -n justbooks --dry-run=client -o yaml | kubectl apply -f -",
               "kubectl set image deployment/justbooks justbooks=913524927483.dkr.ecr.ap-south-1.amazonaws.com/justbooks:'"$IMAGE_TAG"' -n justbooks",
               "kubectl rollout status deployment/justbooks -n justbooks --timeout=180s"
-            ]'
+            ]' \
+            --query 'Command.CommandId' \
+            --output text)
+
+          echo "SSM Command ID: $COMMAND_ID"
+
+          aws ssm wait command-executed \
+            --region "$AWS_REGION" \
+            --command-id "$COMMAND_ID" \
+            --instance-id "$EC2_INSTANCE_ID"
+
+          STATUS=$(aws ssm get-command-invocation \
+            --region "$AWS_REGION" \
+            --command-id "$COMMAND_ID" \
+            --instance-id "$EC2_INSTANCE_ID" \
+            --query 'Status' \
+            --output text)
+
+          echo "SSM Status: $STATUS"
+
+          aws ssm get-command-invocation \
+            --region "$AWS_REGION" \
+            --command-id "$COMMAND_ID" \
+            --instance-id "$EC2_INSTANCE_ID" \
+            --query 'StandardOutputContent' \
+            --output text
+
+          aws ssm get-command-invocation \
+            --region "$AWS_REGION" \
+            --command-id "$COMMAND_ID" \
+            --instance-id "$EC2_INSTANCE_ID" \
+            --query 'StandardErrorContent' \
+            --output text
+
+          if [ "$STATUS" != "Success" ]; then
+            echo "SSM deployment failed."
+            exit 1
+          fi
