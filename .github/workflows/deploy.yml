@@ -1,4 +1,4 @@
-name: Build and Push JustBooks
+name: Build and Deploy JustBooks
 
 on:
   push:
@@ -12,9 +12,11 @@ permissions:
 env:
   AWS_REGION: ap-south-1
   ECR_REPOSITORY: justbooks
+  ECR_REGISTRY: 913524927483.dkr.ecr.ap-south-1.amazonaws.com
+  EC2_INSTANCE_ID: i-09178c13cf6536c6b
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,22 +29,29 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Test SSM connection
-        run: |
-          aws ssm send-command \
-            --region ${{ env.AWS_REGION }} \
-            --instance-ids i-09178c13cf6536c6b \
-            --document-name "AWS-RunShellScript" \
-            --parameters 'commands=["echo GITHUB_ACTIONS_SSM_SUCCESS"]'
-
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build and push image
+      - name: Build and push Docker image
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Deploy to Kubernetes via SSM
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          aws ssm send-command \
+            --region "$AWS_REGION" \
+            --instance-ids "$EC2_INSTANCE_ID" \
+            --document-name "AWS-RunShellScript" \
+            --parameters 'commands=[
+              "ECR_PASSWORD=$(aws ecr get-login-password --region ap-south-1)",
+              "kubectl create secret docker-registry ecr-registry --docker-server=913524927483.dkr.ecr.ap-south-1.amazonaws.com --docker-username=AWS --docker-password=\"$ECR_PASSWORD\" -n justbooks --dry-run=client -o yaml | kubectl apply -f -",
+              "kubectl set image deployment/justbooks justbooks=913524927483.dkr.ecr.ap-south-1.amazonaws.com/justbooks:'"$IMAGE_TAG"' -n justbooks",
+              "kubectl rollout status deployment/justbooks -n justbooks --timeout=180s"
+            ]'
